@@ -158,6 +158,99 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 3000)
     }
 
+    if (document.querySelector('.slider-range')) {
+        const slider = document.querySelector('.slider-range'),
+            minHandle = document.querySelector('#min-handle'),
+            maxHandle = document.querySelector('#max-handle'),
+            range = document.querySelector('#range'),
+            minPriceInput = document.querySelector('#min-price'),
+            maxPriceInput = document.querySelector('#max-price'),
+            minValueSpan = document.querySelector('#min-value'),
+            maxValueSpan = document.querySelector('#max-value'),
+            handleWidth = minHandle.offsetWidth
+    
+        let minPrice = parseFloat(minValueSpan.getAttribute("data-value")),
+            maxPrice = parseFloat(maxValueSpan.getAttribute("data-value"))
+    
+        let sliderWidth
+    
+        if (localStorage.getItem('sliderWidth')) {
+            sliderWidth = parseFloat(localStorage.getItem('sliderWidth'))
+        } else {
+            sliderWidth = slider.offsetWidth
+            localStorage.setItem('sliderWidth', sliderWidth)
+        }
+    
+        if (localStorage.getItem('minValue') && localStorage.getItem('maxValue') && localStorage.getItem('minPos') && localStorage.getItem('maxPos')) {
+            minPriceInput.value = localStorage.getItem('minValue')
+            maxPriceInput.value = localStorage.getItem('maxValue')
+            minHandle.style.left = localStorage.getItem('minPos') + 'px'
+            maxHandle.style.left = localStorage.getItem('maxPos') + 'px'
+            updateRange()
+        }
+    
+        function updateRange() {
+            const minPos = minHandle.offsetLeft,
+                maxPos = maxHandle.offsetLeft
+    
+            range.style.left = minPos + 'px'
+            range.style.width = (maxPos - minPos) + 'px'
+    
+            const minValue = Math.round(minPrice + (minPos / (sliderWidth - handleWidth)) * (maxPrice - minPrice)),
+                maxValue = Math.round(minPrice + (maxPos / (sliderWidth - handleWidth)) * (maxPrice - minPrice))
+    
+            minPriceInput.value = minValue
+            maxPriceInput.value = maxValue
+            minValueSpan.textContent = minValue
+            maxValueSpan.textContent = maxValue
+    
+            localStorage.setItem('minValue', minValue)
+            localStorage.setItem('maxValue', maxValue)
+            localStorage.setItem('minPos', minPos)
+            localStorage.setItem('maxPos', maxPos)
+        }
+    
+        function handleDrag(e, handle) {
+            e.preventDefault()
+    
+            const handleStartX = e.clientX || e.touches[0].clientX,
+                handleStartLeft = handle.offsetLeft
+    
+            const onMove = (moveEvent) => {
+                const moveX = moveEvent.clientX || moveEvent.touches[0].clientX
+                let newLeft = moveX - handleStartX + handleStartLeft
+    
+                if (handle === minHandle) {
+                    newLeft = Math.max(0, Math.min(newLeft, maxHandle.offsetLeft - handleWidth))
+                } else {
+                    newLeft = Math.max(minHandle.offsetLeft + handleWidth, Math.min(newLeft, sliderWidth - handleWidth))
+                }
+    
+                handle.style.left = newLeft + 'px'
+                updateRange()
+            }
+    
+            const onEnd = () => {
+                document.removeEventListener('mousemove', onMove)
+                document.removeEventListener('mouseup', onEnd)
+                document.removeEventListener('touchmove', onMove)
+                document.removeEventListener('touchend', onEnd)
+            }
+    
+            document.addEventListener('mousemove', onMove)
+            document.addEventListener('mouseup', onEnd)
+            document.addEventListener('touchmove', onMove)
+            document.addEventListener('touchend', onEnd)
+        }
+    
+        minHandle.addEventListener('mousedown', (e) => handleDrag(e, minHandle))
+        maxHandle.addEventListener('mousedown', (e) => handleDrag(e, maxHandle))
+        minHandle.addEventListener('touchstart', (e) => handleDrag(e, minHandle))
+        maxHandle.addEventListener('touchstart', (e) => handleDrag(e, maxHandle))
+    
+        updateRange()
+    }
+
     //burger
     if (document.querySelector(".burger")) {
         const burger = document.querySelector(".burger"),
@@ -340,5 +433,117 @@ document.addEventListener("DOMContentLoaded", function () {
             document.removeEventListener('click', playVideo);
         }
         document.addEventListener('click', playVideo);
+    }
+
+    if(document.querySelector(".toggle-btn")) {
+        const toggleButtons = document.querySelectorAll(".toggle-btn"),
+            sections = {
+                rozdrib: document.querySelector("#rozdrib"),
+                gurt: document.querySelector("#gurt")
+            }
+    
+        toggleButtons.forEach(button => {
+            button.addEventListener("click", function (e) {
+                e.preventDefault()
+    
+                toggleButtons.forEach(btn => btn.classList.remove("active_product"))
+                this.classList.add("active_product")
+    
+                const target = this.dataset.target
+                Object.keys(sections).forEach(key => {
+                    sections[key].style.display = key === target ? "block" : "none"
+                })
+            })
+        })
+    
+        sections.gurt.style.display = "none"
+    }
+     function slider() {
+        const sliderContainer = document.querySelector('.carousel-card'),
+            sliderImages = [...document.querySelectorAll('.carousel-item')],
+            btnSlider = document.querySelectorAll(".btn"),
+            imgBlock = document.querySelector(".img-block"),
+            carouselContainer = document.querySelector(".small-img"),
+            mainImg = document.querySelector(".main-img"),
+            cardMain = document.querySelector(".description_container")
+        let imageHeight,
+            containerHeight,
+            imageWidth,
+            currentSlide = 0
+        for(let i = 0; i < sliderImages.length; i++) {
+            console.log("+");
+            sliderImages[i].style.height = cardMain.offsetHeight / 2 + "rem"
+        }
+        sliderContainer.style.height = cardMain.offsetHeight + "rem"
+        mainImg.style.height = cardMain.offsetHeight + "rem"
+        // console.log(mainImg.offsetHeight);
+        btnSlider.forEach(itemBtn => {
+            if (sliderImages.length > 2) {
+                imageHeight = sliderImages[0].offsetHeight + 10,
+                containerHeight = imageHeight * 2,
+                imageWidth = sliderImages[0].offsetWidth
+                imgBlock.style.height = containerHeight + 50 + "rem"
+                carouselContainer.style.height = containerHeight + "rem"
+                itemBtn.style.display = "block"
+                carouselContainer.style.padding = "55px 0 25rem"
+                // carouselContainer.style.margin = "0 0 25px"
+            } else if(sliderImages.length == 2) {
+                imgBlock.style.display = "grid"
+                carouselContainer.style.display = "block"
+                itemBtn.style.display = "none"
+            } else {
+                itemBtn.style.display = "none"
+                carouselContainer.style.padding = ""
+                imgBlock.style.display = "block"
+                carouselContainer.style.display = "none"
+            }
+        })
+
+        function nextSlide(e) {
+            e.preventDefault()
+            if (currentSlide > 0) {
+                currentSlide--
+                sliderContainer.style.transition = 'transform 0.3s ease-in-out'
+                sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}rem)`
+            }
+        }
+
+        function prevSlide(e) {
+            e.preventDefault()
+            if (currentSlide < sliderImages.length - 2) {
+                currentSlide++
+                sliderContainer.style.transition = 'transform 0.3s ease-in-out'
+                sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}rem)`
+            }
+        }
+
+        const nextButton = document.querySelector('.btn-next')
+        if (nextButton) {
+            nextButton.style.width = imageWidth + "rem"
+            nextButton.querySelector("svg").style.width = imageWidth + "rem"
+            nextButton.addEventListener('click', nextSlide)
+        }
+
+        const prevButton = document.querySelector('.btn-prev')
+        if (prevButton) {
+            prevButton.style.width = imageWidth + "rem"
+            prevButton.querySelector("svg").style.width = imageWidth + "rem"
+            prevButton.addEventListener('click', prevSlide)
+        }
+
+    }
+    if(document.querySelector(".img-block")) {
+        slider()
+    }
+    if (document.querySelector(".products-sm")) {
+        let productImages = document.querySelectorAll('.products-sm img'),
+            generalImg = document.querySelector('.general-img img')
+
+        productImages.forEach(function (image) {
+            image.addEventListener('click', function () {
+                let clickedImageUrl = this.src
+                generalImg.src = clickedImageUrl
+            })
+        })
     }
 })

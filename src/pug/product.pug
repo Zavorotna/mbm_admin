@@ -27,25 +27,121 @@ html(lang="en")
         include components/succes 
         include components/spivpracia 
         include components/header
-        main 
-            .product_container 
-                .grid.col-2
-                    .image_container.grid
-                        .small_img
-                            picture
-                                img(src="", alt="")
-                            picture
-                                img(src="", alt="")
-                        .main_img
+        main.wrapper
+            .product_container.container
+                .grid.col-2.card-main
+                    .img-block 
+                        .small-img
+                            a(href="#").btn.btn-next
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 170 20" fill="none">
+                                    <path d="M81 12L85 8L89 12" stroke="#1E1E1E" stroke-linecap="round"/>
+                                </svg>
+                                
+                            .carousel-card.products-sm
+                                .small-img-parent.carousel-item
+                                    picture 
+                                        img.small-image(src="img/card1.jpg", alt="")
+                                .small-img-parent.carousel-item
+                                    picture 
+                                        img.small-image(src="img/card2.jpg", alt="")
+
+                            a(href="#").btn.btn-prev
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 170 20" fill="none">
+                                    <path d="M89 8L85 12L81 8" stroke="#1E1E1E" stroke-linecap="round"/>
+                                </svg>
+                                
+                        .main-img.general-img
                             picture 
-                                img(src="", alt="")
+                                img.main-card-img(src="img/card1.jpg", alt="")
                     .description_container 
                         h1 однотонний чоловічий базовий світшот
                         .flex.items-center.product_btn_change
-                            a(href="#") роздріб
-                            a(href="#") гурт
-                        .description_product_one 
-                            
-                        .description_product_opt
+                            a(href="#" data-target="rozdrib").toggle-btn.active_product роздріб
+                            a(href="#" data-target="gurt").toggle-btn гурт
+                        .description_product_one#rozdrib
+                            .price_block
+                                p.price 1050 ₴
+                            include components/description_product
+                            form(action="") 
+                                .color_container
+                                    p оберіть колір:
+                                    .color.flex.items-center
+                                        label
+                                            input(type="radio" name="color" value="#fff")
+                                            span
+                                        label
+                                            input(type="radio" name="color" value="blue")
+                                            span
+                                        label
+                                            input(type="radio" name="color" value="red")
+                                            span
+                                        label
+                                            input(type="radio" name="color" value="#000")
+                                            span
+                                        label
+                                            input(type="radio" name="color" value="#ccc")
+                                            span
+                                        label
+                                            input(type="radio" name="color" value="brown")
+                                            span
+                                .size_container 
+                                    p оберіть розмір:
+                                    .flex.items-center.category_btn.card_size_btn
+                                        label
+                                            input(type="radio", name="size").catalog_cta.items-center
+                                            span xs
+                                        label
+                                            input(type="radio", name="size").catalog_cta.items-center
+                                            span s
+                                        label
+                                            input(type="radio", name="size").catalog_cta.items-center
+                                            span m
+                                        label
+                                            input(type="radio", name="size").catalog_cta.items-center
+                                            span l
+                                button(type="submit").submit-btn.spivpracia_submit_btn додати в кошик
+                        .description_product_opt.none_product#gurt
+                            .flex.items-center.price_block
+                                p.price 575 ₴
+                                p.price_rozdrib 575 ₴
+                            include components/description_product
+                            form(action="#")
+                                .color_container
+                                    p оберіть колір:
+                                    .color.flex.items-center
+                                        label
+                                            input(type="radio" name="color" value="#fff")
+                                            span
+                                        label
+                                            input(type="radio" name="color" value="blue")
+                                            span
+                                        label
+                                            input(type="radio" name="color" value="red")
+                                            span
+                                        label
+                                            input(type="radio" name="color" value="#000")
+                                            span
+                                        label
+                                            input(type="radio" name="color" value="#ccc")
+                                            span
+                                        label
+                                            input(type="radio" name="color" value="brown")
+                                            span
+                                .size_container 
+                                    p ростовка:
+                                    .category_btn.card_size_btn.opt_size
+                                        label
+                                            input(type="checkbox", name="").btn_opt.catalog_cta.items-center
+                                            span від розміру XS до XL
+                                .flex.items-center
+                                    button(type="submit").submit-btn.spivpracia_submit_btn додати в кошик
+                                    a(href="#").spivpracia_btn.spivpracia_product_btn співпраця
+            section.same_product.container 
+                h2 схожі товари
+                .grid.col-4.catalog_container
+                    - for(let i = 1; i <= 4; i++)
+                        include components/card
+                .flex.cta_main
+                    a.submit-btn.spivpracia_submit_btn(href="catalog.html") усі товари
         include components/footer
         script(src="js/scripts.js") 

@@ -33,7 +33,7 @@ html(lang="en")
                     h1 Стильний і комфортний одяг для усієї родини
                     p Гурт та роздріб
                     .flex.cta_main
-                        a.cta.catalog_cta(href="#catalog") каталог
+                        a.cta.catalog_cta(href="catalog.html") каталог
                         a.cta.black_cta(href="#").spivpracia_btn співпраця
                 .grid.grid_main_container 
                     .slider-images-1
@@ -76,7 +76,7 @@ html(lang="en")
                         p Ми — український бренд із власним виробництвом, що спеціалізується на створенні дитячого, жіночого та чоловічого одягу. 
                         p Наша мета — забезпечити кожного комфортним та стильним одягом.
                         .flex
-                            a.cta.catalog_cta(href="#catalog") каталог
+                            a.cta.catalog_cta(href="catalog.html") каталог
                             a.cta.black_cta(href="#").spivpracia_btn співпраця
                         .grid.col-4.about-pic
                             picture 
@@ -87,23 +87,7 @@ html(lang="en")
                                 img(src="img/sec-3-3.jpg", alt="" loading="lazy")
                             picture 
                                 img(src="img/sec-3-4.jpg", alt="" loading="lazy")
-            section.catalog.wrapper.container#catalog
-                //- винести каталог на окерму сторінку
-                //- в кошику + - видалити і очистити батон, усі тоі=вари батон
-                h2 каталог
-                .grid.wrapper.category_btn
-                    //- зробити радіокнопки
-                    button.cta.catalog_cta.items-center(href="#") для жінок
-                    button.cta.catalog_cta.items-center(href="#") для чоловіків
-                    button.cta.catalog_cta.items-center(href="#") для дівчаток
-                    button.cta.catalog_cta.items-center(href="#") для хлопчиків
-                .filter.flex-between
-                    include components/filter
-                    include components/sort-select
-                .grid.col-4.catalog_container
-                    - for(let i = 1; i <= 4; i++)
-                        include components/card
-                include components/pagination
+            
             section.advantages_container.black_bg 
                 .wrapper.grid.col_3_adv
                     .bg1 

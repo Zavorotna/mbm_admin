@@ -8,6 +8,16 @@
                 </svg>
         .description-more
             form(action="#")
+                p.header-filter Ціна
+                .slider-range
+                    .range#range
+                    .values
+                        span#min-value(data-value="50")
+                        span#max-value(data-value="200") 
+                    .handle#min-handle
+                    .handle#max-handle
+                    input(type="hidden" id="min-price" name="min_price")
+                    input(type="hidden" id="max-price" name="max_price")
                 .flex-between 
                     .category_filter 
                         p Категорія
