@@ -1,0 +1,81 @@
+//sort select
+.sort-select
+    padding: 0 0 30rem
+    column-gap: 8rem
+    justify-content: flex-end
+    p
+        color: #1E1E1E
+        font-size: 18rem
+        font-weight: 500
+        text-transform: uppercase
+.select
+    position: relative
+    min-width: 300rem
+    height: 30rem
+    // border: 1px solid #1E1E1E
+    background: #FFF
+    z-index: 7
+
+.is-opened
+    .select__in
+        &:after
+            transform: translateY(0%) rotate(45deg)
+    .select__list
+        visibility: visible
+        max-height: none
+        opacity: 1
+        z-index: 5
+    .select__item
+        font-size: 18rem
+        transition: all .5s ease
+        display: block
+        &:hover
+            color: #C482E6
+
+.is-active
+    display: none
+
+.select__in
+    position: absolute
+    padding-left: 20rem
+    font-size: 18rem
+    top: 50%
+    left: 50%
+    width: 100%
+    user-select: none
+    transform: translate(-50%, -50%)
+    cursor: pointer
+    &::after
+        transition: all 1s ease
+        font-weight: 500
+        content: ""
+        position: absolute
+        top: 40%
+        right: 30rem
+        width: 8px
+        height: 8px
+        display: block
+        border-top: 1px solid #1E1E1E
+        border-left: 1px solid #1E1E1E
+        transform: translateY(-50%) rotate(225deg)
+.select__list
+    display: block
+    overflow: hidden
+    width: 100%
+    background: #FFF
+    position: absolute
+    top: 100%
+    left: -1px
+    transition: opacity .2s ease .1s
+    visibility: hidden
+    max-height: 0
+    opacity: 0
+
+.select__item
+    display: none
+    padding: 5px 10px
+    font-size: 14rem
+    color: #1E1E1E
+    background: #FFF
+    transition: all .3s ease
+    cursor: pointer

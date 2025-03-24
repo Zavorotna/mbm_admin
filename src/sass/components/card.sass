@@ -1,0 +1,129 @@
+.card
+    figcaption
+        position: relative
+    picture
+        display: inline-block
+        min-height: 150rem
+        width: 100%
+        height: 100%
+        +media(1024)
+            max-height: 450rem
+        img
+            border-radius: 3px
+            aspect-ratio: 3 / 4
+
+    h2
+        display: flex
+        align-items: center
+        text-align: left
+        min-height: 43px
+        padding: 10rem 0 15rem
+        font-size: 16rem
+        font-weight: 500
+        text-transform: none
+        +media(1024)
+            font-size: 20rem
+        +media(1150)
+            min-height: 73px
+    button
+        gap: 0
+        justify-content: flex-end
+        position: relative
+        width: 30rem
+        height: 30rem
+        border: 1px solid $black
+        border-radius: 1.5px
+        background-color: transparent
+        overflow: hidden
+        transition: all .5s ease
+        cursor: pointer
+        svg
+            transform: translate(-60%, 40%)
+            path 
+                stroke: $black
+        span
+            display: block
+            position: absolute
+            width: 0
+            top: 50%
+            left: 0
+            white-space: nowrap
+            color: transparent
+            transform: translateY(-50%)
+        &:hover 
+            color: $white
+            background-color: $black
+            +media(768)
+                width: 29%
+                span
+                    color: $white
+                    width: 80%
+                    left: 0%
+            svg
+                path 
+                    stroke: $white
+    select
+        appearance: none
+        font-size: 14px
+        width: 55%
+        border: none
+        border-bottom: 1px solid $black
+        background-color: transparent
+        outline: none
+        option
+            padding: 0 10rem
+        +media(768)
+            width: 35%
+.mask-card
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+.color
+    row-gap: 0
+    column-gap: 5px
+    flex-wrap: wrap
+    max-width: 30vw        
+    label
+        position: relative
+    span
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        width: 15px
+        height: 15px
+        border-radius: 50%
+        transform: translate(16%, 16%)
+    input
+        width: 20px
+        height: 20px
+        border-radius: 50%
+        border: 4px solid $white
+        outline:1px solid $white
+        &:checked
+            outline: 1px solid $gray
+            
+.price,
+.size
+    font-size: 14px
+    padding-bottom: 15rem
+    label
+        position: relative
+        &::before
+            content: ""
+            position: absolute
+            width: 8px
+            height: 8px
+            top: 30%
+            right: 10rem
+            border-top: 1.5px solid $black
+            border-right: 1.5px solid $black
+            transform: translateY(-50%) rotate(135deg)
+            z-index: -1
+
+div.size
+    min-height: 47rem
+    +media(1024)
+        min-height: 20rem

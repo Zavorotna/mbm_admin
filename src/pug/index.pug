@@ -1,0 +1,147 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
+        link(rel="stylesheet", href="css/styles.css")
+        link(rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png")
+        link(rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png")
+        link(rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png")
+        link(rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png")
+        link(rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png")
+        link(rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png")
+        link(rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png")
+        link(rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png")
+        link(rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png")
+        link(rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png")
+        meta(name="msapplication-TileColor" content="#ffffff")
+        meta(name="msapplication-TileImage" content="/ms-icon-144x144.png")
+        meta(name="theme-color" content="#ffffff")
+        title МВМ — Стильний і комфортний одяг для усієї родини
+    body 
+        .dark-bgc
+        .dark-bgc-succes
+        include components/succes 
+        include components/spivpracia 
+        include components/header 
+        main 
+            section.black_bg.main_section
+                div.flex.main_container
+                    h1 Стильний і комфортний одяг для усієї родини
+                    p Гурт та роздріб
+                    .flex.cta_main
+                        a.cta.catalog_cta(href="#catalog") каталог
+                        a.cta.black_cta(href="#").spivpracia_btn співпраця
+                .grid.grid_main_container 
+                    .slider-images-1
+                        img(src="img/main-bg1.jpg", alt="")
+                        img(src="img/main-bg1-2.jpg", alt="")
+                        img(src="img/main-bg1-3.jpg", alt="")
+                        img(src="img/main-bg1-4.jpg", alt="")
+                        img(src="img/main-bg1-5.jpg", alt="")
+                    video(autoplay loop muted playsinline)
+                        source(src="video/video_mbm.mp4" type="video/mp4")
+                    video(autoplay loop muted playsinline)
+                        source(src="video/video_mbm2.mp4" type="video/mp4")
+                    .slider-images-2
+                        img(src="img/main-bg2-1.jpg", alt="")
+                        img(src="img/main-bg2-2.jpg", alt="")
+                        img(src="img/main-bg2-3.jpg", alt="")
+                        img(src="img/main-bg2.jpg", alt="")
+            
+            .move-text 
+                .content-slider.pos-r.flex
+                    - for(let i = 0; i < 8; i++) 
+                        h3.pos-r безкоштовна доставка від 2499 ₴
+            section.wrapper.container
+                .grid.col-4
+                    .category_block.woman
+                        a.cta.black_cta(href="#") для жінок
+                    .category_block.man
+                        a.cta.black_cta(href="#") для чоловіків
+                    .category_block.girl
+                        a.cta.black_cta(href="#") для дівчаток
+                    .category_block.boy
+                        a.cta.black_cta(href="#") для хлопчиків
+            section.black_bg
+                .wrapper.grid.col-2
+                    .about-img 
+                        picture 
+                            img(src="img/sec-3-bg.jpg", alt="" loading="lazy")
+                    .about_container.container
+                        h2 МВМ — комфорт і стиль для кожного дня
+                        p Ми — український бренд із власним виробництвом, що спеціалізується на створенні дитячого, жіночого та чоловічого одягу. 
+                        p Наша мета — забезпечити кожного комфортним та стильним одягом.
+                        .flex
+                            a.cta.catalog_cta(href="#catalog") каталог
+                            a.cta.black_cta(href="#").spivpracia_btn співпраця
+                        .grid.col-4.about-pic
+                            picture 
+                                img(src="img/sec-3-1.jpg", alt="" loading="lazy")
+                            picture 
+                                img(src="img/sec-3-2.jpg", alt="" loading="lazy")
+                            picture 
+                                img(src="img/sec-3-3.jpg", alt="" loading="lazy")
+                            picture 
+                                img(src="img/sec-3-4.jpg", alt="" loading="lazy")
+            section.catalog.wrapper.container#catalog
+                //- винести каталог на окерму сторінку
+                //- в кошику + - видалити і очистити батон, усі тоі=вари батон
+                h2 каталог
+                .grid.wrapper.category_btn
+                    //- зробити радіокнопки
+                    button.cta.catalog_cta.items-center(href="#") для жінок
+                    button.cta.catalog_cta.items-center(href="#") для чоловіків
+                    button.cta.catalog_cta.items-center(href="#") для дівчаток
+                    button.cta.catalog_cta.items-center(href="#") для хлопчиків
+                .filter.flex-between
+                    include components/filter
+                    include components/sort-select
+                .grid.col-4.catalog_container
+                    - for(let i = 1; i <= 4; i++)
+                        include components/card
+                include components/pagination
+            section.advantages_container.black_bg 
+                .wrapper.grid.col_3_adv
+                    .bg1 
+                    .bg2.flex.items-center
+                        .dark-mask
+                        h2 Чому варто купувати у нас?
+                        .flex.items-center
+                            p.transparent_cta Власне виробництво
+                            p.transparent_cta Висока якість матеріалів
+                            p.transparent_cta > 20 років на ринку
+                    .bg3
+            section.wrapper.reviews_container.container
+                h2 відгуки
+                .grid.col-3
+                    div.review 
+                        picture 
+                            img(src="img/rev1.png", alt="" loading="lazy")
+                    div.review 
+                        picture 
+                            img(src="img/rev2.png", alt="" loading="lazy")
+                    div.review 
+                        picture 
+                            img(src="img/rev3.png", alt="" loading="lazy")
+                include components/pagination
+            section.info_container.wrapper.container
+                h2 інформація
+                include components/information
+            section.container.black_bg
+                .wrapper.start_buisnes
+                    h2 розпочніть прибутковий бізнес з MBM!
+                    p Співпрацювати з нами по опту — це вигідно, зручно та надійно! Ми є виробником, тому гарантуємо високу якість флісових костюмів за найкращими цінами. Пропонуємо широкий асортимент моделей, швидку доставку по Україні та гнучкі умови для кожного партнера.
+                    .grid.items-center.col-3
+                        p.transparent_cta Товар у наявності
+                        p.transparent_cta Вигідні ціни
+                        p.transparent_cta Повернення та обмін товару
+            section.wrapper.container 
+                h2 контакти
+                include components/contacts
+
+        include components/footer
+        script(src="js/scripts.js") 

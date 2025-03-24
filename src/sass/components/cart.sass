@@ -1,0 +1,63 @@
+.data
+    div
+        min-width: 50%
+        margin-bottom: 10px
+    +media(768)
+        display: flex
+        gap: 10px
+        justify-content: space-between
+.error_cart
+    flex-direction: column
+    position: absolute
+    top: 60%
+    left: 50%
+    transform: translate(-50%, -50%)
+.phone
+    position: relative
+.cart_popup,
+.spivpracia_popup
+    position: fixed
+    top: 50%
+    left: 50%
+    display: none
+    padding: 70rem 50rem 120rem
+    width: 90vw
+    background-color: $white
+    transform: translate(-50%, -50%)
+    z-index: 3
+    +media(1024)
+        width: 50vw
+.spivpracia_popup
+    +media(1024)
+        width: 40vw
+
+.spivpracia_popup
+    padding: 50rem
+    div
+        margin-bottom: 20rem
+    .tac_form_btn
+        padding-top: 0
+.cancel_cart,
+.cancel_spivpracia
+    position: absolute
+    top: 15px
+    right: 15px
+.cart-head
+    padding-bottom: 10rem
+    font-size: 18rem
+    font-weight: 700
+    text-transform: uppercase
+
+.cart-container
+    grid-template-columns: 1fr 4fr
+    p
+        padding-bottom: 0
+
+.color_cart
+    gap: 5px
+
+.color_circle 
+    display: inline-block
+    width: 20rem
+    height: 20rem
+    border-radius: 50%

@@ -1,0 +1,40 @@
+.wrapper-contact
+    +media(550)
+        display: flex
+        justify-content: center
+        gap: 100rem
+        flex-wrap: nowrap
+    +media(1024)
+        width: 55%
+        margin: 0 auto
+    h2 
+        padding-bottom: 20rem
+        text-align: left
+        font-size: 18rem
+    form
+        min-width: 370rem
+.contact-page
+    +media(550)
+        display: block
+.page-contact
+    padding-bottom: 70rem
+    +media(538)
+    a
+        margin-bottom: 20rem
+        color: $black
+        transition: all .5 ease
+        &:hover
+            transform: scale(1.1)
+
+.social-contact
+    a
+        margin-bottom: 11rem
+
+.form-contactPage 
+    .tac_form_btn
+        padding: 0
+    p
+        position: relative
+        &:not(&:last-child)
+            margin-bottom: 25rem
+            
