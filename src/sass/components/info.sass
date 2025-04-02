@@ -11,8 +11,10 @@
 
 .readmore
     position: relative
-    padding: 20rem 30rem
+    padding: 15rem 20rem
     color: $black
+    +media(768)
+        padding: 20rem 30rem
     span
         &:first-child
             font-size: 18rem
@@ -35,9 +37,11 @@
     overflow: hidden
 
 .visible
-    padding: 0 30rem 50rem
+    padding: 0 15rem 30rem
     max-height: 3000rem
     transition: max-height 1s ease
+    +media(768)
+        padding: 0 30rem 50rem
     > div
         padding-bottom: 20rem
 

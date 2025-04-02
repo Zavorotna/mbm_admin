@@ -87,7 +87,16 @@ html(lang="en")
                                 img(src="img/sec-3-3.jpg", alt="" loading="lazy")
                             picture 
                                 img(src="img/sec-3-4.jpg", alt="" loading="lazy")
-            
+            section.same_product.container.wrapper
+                h2 популярні товари
+                .grid.col-4.catalog_container
+                    - for(let i = 1; i <= 4; i++)
+                        include components/card
+            section.same_product.container.wrapper
+                h2 Новинки
+                .grid.col-4.catalog_container
+                    - for(let i = 1; i <= 4; i++)
+                        include components/card
             section.advantages_container.black_bg 
                 .wrapper.grid.col_3_adv
                     .bg1 

@@ -1,0 +1,84 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
+        link(rel="stylesheet", href="css/styles.css")
+        link(rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png")
+        link(rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png")
+        link(rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png")
+        link(rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png")
+        link(rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png")
+        link(rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png")
+        link(rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png")
+        link(rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png")
+        link(rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png")
+        link(rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png")
+        meta(name="msapplication-TileColor" content="#ffffff")
+        meta(name="msapplication-TileImage" content="/ms-icon-144x144.png")
+        meta(name="theme-color" content="#ffffff")
+        title МВМ — Стильний і комфортний одяг для усієї родини
+    body 
+        .dark-bgc
+        .dark-bgc-succes
+        include components/succes 
+        include components/spivpracia 
+        include components/header 
+        main.wrapper.container.order_container
+            h1 оформлення замовлення
+            form(action="#")
+                h2 ваші дані:
+                .grid
+                    .name
+                        label(for='name') Імʼя*
+                        input#name(type='text' name='userName' minlength='3' maxlength='30' placeholder='Імʼя*' required='' oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯїЇєЄіІґҐs]/g, '')") 
+                    .surname
+                        label(for='surname')  Прізвище*
+                        input#surname(type='text' name='userSurname' minlength='3' maxlength='30' placeholder='Прізвище*' required='' oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯїЇєЄіІґҐs]/g, '')") 
+                .grid
+                    .nameParent
+                        label(for='nameParent') По-батькові*
+                        input#nameParent(type='text' name='userParentName' minlength='3' maxlength='30' placeholder='По-батькові*' required='' oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯїЇєЄіІґҐs]/g, '')") 
+                    .phone
+                        label(for='phone') Телефон*
+                        input.phoneInput.inputMask(type='tel' name='userPhone' placeholder='+380 ' required='' maxlength='13')
+                        span.error-tel
+                .grid 
+                    .delivery_method 
+                        h2 Оберіть спосіб доставки:
+                        .flex.post_icon
+                            label
+                                input(type="radio", name="post").up
+                            label
+                                input(type="radio", name="post").np
+                        label.arrow_select
+                            span Регіон/область*
+                            select.region(name="region")
+                                option(value="0" selected disabled) Обрати 
+                                option(value="1") Хмельницький  
+                        label.arrow_select 
+                            span Населений пункт*
+                            select.region(name="region")
+                                option(value="0" selected disabled) Обрати 
+                                option(value="1") Хмельницький  
+                        label Відділення пошти*
+                            input(type="text")
+                    .pay_method 
+                        h2 Оберіть спосіб оплати: 
+                        label.items-center
+                            input(type="radio", name="pay")
+                            span Оплата на рахунок
+                        label.items-center
+                            input(type="radio", name="pay")
+                            span Готівкою при отриманні
+                        label.items-center
+                            input(type="radio", name="pay")
+                            span Накладений платіж
+                .flex.basket_cta.order_cta
+                    a.cta.catalog_cta(href="basket.html") назад у кошик
+                    button.cta.black_cta(type="submit") підтвердити
+        include components/footer
+        script(src="js/scripts.js") 

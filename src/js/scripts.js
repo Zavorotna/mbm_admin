@@ -168,19 +168,19 @@ document.addEventListener("DOMContentLoaded", function () {
             minValueSpan = document.querySelector('#min-value'),
             maxValueSpan = document.querySelector('#max-value'),
             handleWidth = minHandle.offsetWidth
-    
+
         let minPrice = parseFloat(minValueSpan.getAttribute("data-value")),
             maxPrice = parseFloat(maxValueSpan.getAttribute("data-value"))
-    
+
         let sliderWidth
-    
+
         if (localStorage.getItem('sliderWidth')) {
             sliderWidth = parseFloat(localStorage.getItem('sliderWidth'))
         } else {
             sliderWidth = slider.offsetWidth
             localStorage.setItem('sliderWidth', sliderWidth)
         }
-    
+
         if (localStorage.getItem('minValue') && localStorage.getItem('maxValue') && localStorage.getItem('minPos') && localStorage.getItem('maxPos')) {
             minPriceInput.value = localStorage.getItem('minValue')
             maxPriceInput.value = localStorage.getItem('maxValue')
@@ -188,66 +188,66 @@ document.addEventListener("DOMContentLoaded", function () {
             maxHandle.style.left = localStorage.getItem('maxPos') + 'px'
             updateRange()
         }
-    
+
         function updateRange() {
             const minPos = minHandle.offsetLeft,
                 maxPos = maxHandle.offsetLeft
-    
+
             range.style.left = minPos + 'px'
             range.style.width = (maxPos - minPos) + 'px'
-    
+
             const minValue = Math.round(minPrice + (minPos / (sliderWidth - handleWidth)) * (maxPrice - minPrice)),
                 maxValue = Math.round(minPrice + (maxPos / (sliderWidth - handleWidth)) * (maxPrice - minPrice))
-    
+
             minPriceInput.value = minValue
             maxPriceInput.value = maxValue
             minValueSpan.textContent = minValue
             maxValueSpan.textContent = maxValue
-    
+
             localStorage.setItem('minValue', minValue)
             localStorage.setItem('maxValue', maxValue)
             localStorage.setItem('minPos', minPos)
             localStorage.setItem('maxPos', maxPos)
         }
-    
+
         function handleDrag(e, handle) {
             e.preventDefault()
-    
+
             const handleStartX = e.clientX || e.touches[0].clientX,
                 handleStartLeft = handle.offsetLeft
-    
+
             const onMove = (moveEvent) => {
                 const moveX = moveEvent.clientX || moveEvent.touches[0].clientX
                 let newLeft = moveX - handleStartX + handleStartLeft
-    
+
                 if (handle === minHandle) {
                     newLeft = Math.max(0, Math.min(newLeft, maxHandle.offsetLeft - handleWidth))
                 } else {
                     newLeft = Math.max(minHandle.offsetLeft + handleWidth, Math.min(newLeft, sliderWidth - handleWidth))
                 }
-    
+
                 handle.style.left = newLeft + 'px'
                 updateRange()
             }
-    
+
             const onEnd = () => {
                 document.removeEventListener('mousemove', onMove)
                 document.removeEventListener('mouseup', onEnd)
                 document.removeEventListener('touchmove', onMove)
                 document.removeEventListener('touchend', onEnd)
             }
-    
+
             document.addEventListener('mousemove', onMove)
             document.addEventListener('mouseup', onEnd)
             document.addEventListener('touchmove', onMove)
             document.addEventListener('touchend', onEnd)
         }
-    
+
         minHandle.addEventListener('mousedown', (e) => handleDrag(e, minHandle))
         maxHandle.addEventListener('mousedown', (e) => handleDrag(e, maxHandle))
         minHandle.addEventListener('touchstart', (e) => handleDrag(e, minHandle))
         maxHandle.addEventListener('touchstart', (e) => handleDrag(e, maxHandle))
-    
+
         updateRange()
     }
 
@@ -392,7 +392,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     darkSucces.style.transition = "opacity 0.5s ease"
     darkSucces.style.opacity = "0"
-    
+
     forms.forEach(form => {
         form.addEventListener("submit", function (e) {
             e.preventDefault()
@@ -435,30 +435,31 @@ document.addEventListener("DOMContentLoaded", function () {
         document.addEventListener('click', playVideo);
     }
 
-    if(document.querySelector(".toggle-btn")) {
+    if (document.querySelector(".toggle-btn")) {
         const toggleButtons = document.querySelectorAll(".toggle-btn"),
             sections = {
                 rozdrib: document.querySelector("#rozdrib"),
                 gurt: document.querySelector("#gurt")
             }
-    
+
         toggleButtons.forEach(button => {
             button.addEventListener("click", function (e) {
                 e.preventDefault()
-    
+
                 toggleButtons.forEach(btn => btn.classList.remove("active_product"))
                 this.classList.add("active_product")
-    
+
                 const target = this.dataset.target
                 Object.keys(sections).forEach(key => {
                     sections[key].style.display = key === target ? "block" : "none"
                 })
             })
         })
-    
+
         sections.gurt.style.display = "none"
     }
-     function slider() {
+
+    function slider() {
         const sliderContainer = document.querySelector('.carousel-card'),
             sliderImages = [...document.querySelectorAll('.carousel-item')],
             btnSlider = document.querySelectorAll(".btn"),
@@ -470,24 +471,24 @@ document.addEventListener("DOMContentLoaded", function () {
             containerHeight,
             imageWidth,
             currentSlide = 0
-        for(let i = 0; i < sliderImages.length; i++) {
-            console.log("+");
-            sliderImages[i].style.height = cardMain.offsetHeight / 2 + "rem"
+        for (let i = 0; i < sliderImages.length; i++) {
+            console.log(mainImg.offsetHeight / 2);
+            sliderImages[i].style.height = mainImg.offsetHeight / 2 - 2 + "px"
         }
-        sliderContainer.style.height = cardMain.offsetHeight + "rem"
-        mainImg.style.height = cardMain.offsetHeight + "rem"
+        mainImg.style.height = cardMain.offsetHeight + "px"
+        sliderContainer.style.height = mainImg.offsetHeight + "px"
         // console.log(mainImg.offsetHeight);
         btnSlider.forEach(itemBtn => {
             if (sliderImages.length > 2) {
                 imageHeight = sliderImages[0].offsetHeight + 10,
-                containerHeight = imageHeight * 2,
-                imageWidth = sliderImages[0].offsetWidth
+                    containerHeight = imageHeight * 2,
+                    imageWidth = sliderImages[0].offsetWidth
                 imgBlock.style.height = containerHeight + 50 + "rem"
                 carouselContainer.style.height = containerHeight + "rem"
                 itemBtn.style.display = "block"
                 carouselContainer.style.padding = "55px 0 25rem"
                 // carouselContainer.style.margin = "0 0 25px"
-            } else if(sliderImages.length == 2) {
+            } else if (sliderImages.length == 2) {
                 imgBlock.style.display = "grid"
                 carouselContainer.style.display = "block"
                 itemBtn.style.display = "none"
@@ -504,7 +505,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (currentSlide > 0) {
                 currentSlide--
                 sliderContainer.style.transition = 'transform 0.3s ease-in-out'
-                sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}rem)`
+                sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
             }
         }
 
@@ -513,7 +514,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (currentSlide < sliderImages.length - 2) {
                 currentSlide++
                 sliderContainer.style.transition = 'transform 0.3s ease-in-out'
-                sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}rem)`
+                sliderContainer.style.transform = `translateY(-${currentSlide * imageHeight}px)`
             }
         }
 
@@ -532,7 +533,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     }
-    if(document.querySelector(".img-block")) {
+    if (document.querySelector(".img-block")) {
         slider()
     }
     if (document.querySelector(".products-sm")) {
@@ -546,4 +547,110 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         })
     }
+    //перевірка відправки форми для телефону і імені
+
+    const phoneInput = document.querySelectorAll('.phoneInput'),
+        errorName = document.querySelectorAll('.error-name'),
+        errorTel = document.querySelectorAll('.error-tel')
+    phoneInput.forEach(item => {
+        item.addEventListener('input', function () {
+            let phoneNumber = item.value.trim()
+            const mask = "+380"
+
+            if (!phoneNumber.startsWith(mask)) {
+                phoneNumber = mask + phoneNumber
+            }
+
+            let cleanedValue = phoneNumber.replace(/[^\d+]/g, "")
+
+            if (cleanedValue.length > 13) {
+                cleanedValue = cleanedValue.slice(0, 13)
+            }
+
+            const validInput = isValidPhoneNumber(cleanedValue)
+
+            if (validInput && cleanedValue.length === 13) {
+                item.style.borderColor = 'green'
+                item.style.color = '#121212'
+
+                errorTel.forEach(item => {
+                    item.innerText = ""
+                })
+            } else {
+                item.style.borderColor = '#EB4242'
+                item.style.color = '#EB4242'
+                errorTel.forEach(item => {
+                    item.innerText = "Введіть коректний номер телефону"
+                })
+            }
+        })
+    })
+
+    function validateForm(form) {
+        const phoneInput = form.querySelector("input[name='userPhone']"),
+            phoneNumber = phoneInput.value.trim()
+
+        if (!phoneNumber || !isValidPhoneNumber(phoneNumber) || phoneNumber.length < 13) {
+            errorTel.forEach(item => {
+                item.innerText = "Введіть коректний номер телефону"
+            })
+            return false
+        }
+
+        const inputFields = form.querySelectorAll("input[name='userName']")
+        for (const inputField of inputFields) {
+            const userInput = inputField.value.trim()
+            if (userInput.length < 3) {
+                errorName.forEach(item => {
+                    item.innerText = 'Мінімальна кількість символів для імені: 3'
+                })
+                return false
+            }
+            if (userInput.length > 30) {
+                errorName.forEach(item => {
+                    item.innerText = 'Максимальна кількість символів для імені: 30'
+                })
+                return false
+            }
+        }
+        return true
+    }
+
+    document.querySelectorAll("form[action='sendorder.php'], form[action='senddata.php'], form[action='sendcontact.php']").forEach(form => {
+        form.addEventListener("submit", (e) => {
+            if (!validateForm(form)) {
+                e.preventDefault()
+            }
+        })
+    })
+
+
+    function isValidPhoneNumber(phoneNumber) {
+        return /^\+?(\d{2})?([(]?\d{3}[)]?)\s?[-]?\s?(?:\d{3})\s?[-]?(?:\s?\d{2})\s?[-]?(?:\s?\d{2})$/.test(phoneNumber)
+    }
+
+    const inputMasks = document.querySelectorAll(".inputMask");
+
+    inputMasks.forEach(function (inputMask) {
+        inputMask.addEventListener("click", function () {
+            if (!inputMask.value) {
+                inputMask.value = "+380";
+            }
+        });
+
+        inputMask.addEventListener("input", function () {
+            let inputValue = inputMask.value;
+            let cleanedValue = inputValue.replace(/[^\d+]/g, "");
+
+            inputMask.value = cleanedValue;
+
+            if (cleanedValue.length > 13) {
+                inputMask.value = cleanedValue.slice(0, 13);
+            }
+
+            if (!cleanedValue.startsWith("+380")) {
+                inputMask.value = "+380" + cleanedValue.slice(3);
+            }
+        });
+    });
 })

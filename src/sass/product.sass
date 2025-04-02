@@ -17,25 +17,45 @@
         text-transform: uppercase
     .spivpracia_product_btn
         color: #121212
-
-
-
+    table
+        width: 100%
+        text-align: center
+        border-radius: 3px 
+        border-collapse: collapse
+        background-color: $black
+        overflow: hidden
+    thead
+        background-color: $black
+        color: $white
+    td, th
+        padding: 11rem
+    td
+        border: 1px solid $black
+    th + th
+        border-left: 1px solid $white
+    tbody
+        background-color: #fff
+        tr
+            &:last-child
+                td
+                    &:first-child
+                        border-radius: 0 0 0 3px
+    .color
+        flex-wrap: nowrap
+        width: 100% 
+    p.price_rozdrib
+        padding: 0
 .price_block
     margin-bottom: 30rem
-.price_rozdrib
+
+p.price_rozdrib
     color: #CABABA
     text-decoration: line-through
-.img-block
-    +media(1000)
-        display: grid
-        column-gap: 20rem
-        grid-template-columns: 1fr 1fr
 
 .img-block
     display: grid
     grid-template-columns: 120rem 73%
     grid-column-gap: 20rem
-    // max-height: 500rem
     width: 100%
     height: 100%
     overflow: hidden
@@ -43,6 +63,11 @@
         grid-template-columns: 1.2fr 4fr
     +media(768)
         grid-template-columns: 30% 70%
+    +media(1000)
+        max-height: 600rem
+        display: grid
+        column-gap: 20rem
+        grid-template-columns: 1fr 1fr
     +media(1024)
         grid-template-columns: 170rem 4fr
     img
@@ -57,10 +82,14 @@
     display: grid
     row-gap: 5rem
     grid-template-rows: 1fr
-
+.main-img
+    max-height: 400rem
+    +media(1440)
+        max-height: 600rem
 .carousel-card
     display: grid
     row-gap: 5rem
+    border-radius: 5px
     grid-template-rows: 1fr 1fr
     transition: all .5s aese
 
@@ -105,15 +134,27 @@
     label
         input
             padding: 13px
-            min-width: 70px
-            height: 40px
+            min-width: 70rem
+            height: 40rem
             border-radius: 3px
             border: 1px solid #B9B9B9
         span
             font-size: 18rem
 .opt_size
-    width: 70%
-
+    +media(768)
+        width: 80%
+    span 
+        width: 100%
+.order-product
+    flex-wrap: wrap
+    .cta
+        width: 100%
+        max-width: none
+    .spivpracia_btn
+        &:hover
+            color: $white
+            background-color: $black
 .same_product
     .cta_main
         padding: 70rem 0
+

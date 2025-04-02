@@ -34,7 +34,8 @@ h2
     text-transform: uppercase
 
 input,
-textarea
+textarea,
+select
     appearance: none
     width: 100%
     outline: none
@@ -46,10 +47,15 @@ textarea
 
 input[type='text'],
 input[type='tel'],
-textarea
+textarea,
+select
     padding: 12rem 10rem
     border-radius: 3px
     border: 1px solid $black
+input[type="radio"],
+input[type="checkbox"],
+button
+    cursor: pointer
 
 .wrapper
     width: 95%
@@ -93,7 +99,8 @@ video
     align-items: center
     justify-content: center
     width: 90%
-    padding: 19rem 60rem
+    height: 60rem
+    padding: 19rem
     border-radius: 3px
     text-align: center
     font-size: 18rem
@@ -105,9 +112,6 @@ video
         transform: scale(1.05)
     +media(768)
         width: 45%
-
-.order_container
-    display: none
 
 @import components/header
 @import components/card
@@ -479,19 +483,189 @@ video
         right: 30rem
 .reviews_container
     padding: 70rem 0 0
+
 a.spivpracia_product_btn,
 button.spivpracia_product_btn,
 .spivpracia_submit_btn
-    max-width: 240px
     text-align: center
     width: 100%
-    padding: 24rem 64rem
+    padding: 24rem
     font-size: 18rem
     font-weight: 500
     line-height: norma
     text-transform: uppercase
     border-radius: 3px
     border: 1px solid #121212
+    +media(768)
+        max-width: 240px
 @import components/filter
 @import components/sort
+
+//basket
+.basket_container,
+.order_container
+    h1 
+        font-size: 30rem
+        font-weight: 700
+        text-transform: uppercase
+
+.basket_container
+    h1
+        padding-bottom: 60rem
+    hr
+        margin: 20px 0
+        border: none
+        border-bottom: 1px solid $black
+.delete_cart
+    color: #CABABA
+    font-size: 18rem
+    text-decoration: underline
+    &:hover
+        color: $black
+.basket-card
+    grid-template-columns: repeat(2, 1fr)
+    +media(768)
+        grid-template-columns: 10% 90%
+.description_bascket 
+    h2
+        width: 50%
+        font-size: 18rem
+        text-align: left
+        font-weight: 700
+    p
+        font-size: 18rem
+        font-weight: 500
+        padding-bottom: 30rem
+.quantity_container
+    button
+        width: 20px
+        height: 20px
+        background-color: $white 
+        border: 1px solid $black 
+        transition: all .5s ease
+        border-radius: 3px
+        cursor: pointer
+        &:hover
+            background-color: $black 
+            color: $white
+    input
+        text-align: center
+        appearance: none
+        border: none
+        max-width: 40rem
+.price_basket
+    font-size: 32rem
+    font-weight: 700
+    text-transform: uppercase
+.del
+    border: none
+    background-color: #fff
+    cursor: pointer 
+    svg
+        path 
+            transition: all .5s ease
+            stroke: #CABABA
+        &:hover 
+            path
+                stroke: $black
+.descr_grid
+    +media(768)
+        grid-template-columns: 3fr 1fr
+.sum_container 
+    padding-bottom: 30rem
+    .flex
+        gap: 100rem
+        justify-content: center
+        p
+            &:first-child
+                font-size: 18rem
+                font-weight: 700
+                text-transform: uppercase
+.basket_cta
+    padding-top: 40rem
+    justify-content: center
+    flex-wrap: wrap
+    .catalog_cta
+        width: 100%
+        border: 1px solid $black
+    .black_cta
+        width: 100%
+        background-color: $black 
+        &:hover
+            color: $white
+
+//order
+.order_container
+    +media(1250)
+        width: 60%
+    h1 
+        padding-bottom: 30rem
+        text-align: center
+    h2
+        padding-bottom: 20rem
+        text-align: left
+        font-size: 18rem
+        font-weight: 700
+        text-transform: uppercase
+    label
+        display: block
+        font-weight: 500
+        line-height: 1.8em
+        span
+            display: block
+    input, select
+        border-color: #CABABA
+    .grid
+        margin-bottom: 10rem
+        +media(768)
+            grid-template-columns: repeat(2, 1fr)
+    select
+        background-color: transparent
+        option
+            &:disabled
+                color: $gray
+.post_icon
+    input
+        width: 110rem
+        height: 45rem
+        border-radius: 4px
+        &:checked
+            border: 1px solid #121212
+.up
+    background: #EAEAEA url(../img/up.png) no-repeat center/80%
+            border: 1px solid #121212
+.np
+    background: #EAEAEA url(../img/np.png) no-repeat center/80%
+.arrow_select
+    position: relative
+    margin-bottom: 10rem
+    z-index: 1
+    &::before
+        content: ""
+        position: absolute
+        top: 50%
+        right: 11rem
+        width: 9rem
+        height: 9rem
+        border-top: 1.5px solid $black
+        border-right: 1.5px solid $black
+        transform: translateY(40%) rotate(135deg)
+        z-index: -1
+.pay_method 
+    label
+        display: flex
+        gap: 10rem
+        margin-bottom: 10rem
+        line-height: 1em
+    input
+        width: 15px
+        height: 15px
+        border-radius: 3px
+        outline: 1px solid #B9B9B9
+        border: 2px solid #fff
+        &:checked
+            background-color: $black
+.order_cta
+    padding-top: 40rem
+    
 @import components/footer

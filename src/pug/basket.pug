@@ -1,0 +1,95 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
+        link(rel="stylesheet", href="css/styles.css")
+        link(rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png")
+        link(rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png")
+        link(rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png")
+        link(rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png")
+        link(rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png")
+        link(rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png")
+        link(rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png")
+        link(rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png")
+        link(rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png")
+        link(rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png")
+        meta(name="msapplication-TileColor" content="#ffffff")
+        meta(name="msapplication-TileImage" content="/ms-icon-144x144.png")
+        meta(name="theme-color" content="#ffffff")
+        title МВМ — Стильний і комфортний одяг для усієї родини
+    body 
+        .dark-bgc
+        .dark-bgc-succes
+        include components/succes 
+        include components/spivpracia 
+        include components/header 
+        main.wrapper.container.basket_container
+            .flex-between
+                h1 кошик
+                a.delete_cart(href="#") очистити кошик 
+            hr
+            .basket-card.grid.items-center
+                picture 
+                    img(src="img/card1.jpg", alt="")
+                .grid.descr_grid.items-center
+                    .description_bascket 
+                        h2 однотонний чоловічий базовий світшот
+                        p розмір: 
+                            span S 
+                        form(action="#").flex.items-center.quantity_container
+                            button.minus(type="submit") -
+                            input(type="number", name="quantity" min="1" value="1")
+                            button.plus(type="submit") +
+                    .flex-between.items-center
+                        p.price_basket 1050 ₴
+                        form(action="#")
+                            button(type="submit").del 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                    <path d="M21.875 6.22967C18.4062 5.88592 14.9167 5.70883 11.4375 5.70883C9.375 5.70883 7.3125 5.813 5.25 6.02133L3.125 6.22967" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.854 5.17709L9.08317 3.81251C9.24984 2.82293 9.37484 2.08334 11.1353 2.08334H13.8644C15.6248 2.08334 15.7603 2.86459 15.9165 3.82293L16.1457 5.17709" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19.6361 9.52048L18.959 20.0101C18.8444 21.6455 18.7506 22.9163 15.8444 22.9163H9.1569C6.25065 22.9163 6.1569 21.6455 6.04232 20.0101L5.36523 9.52048" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10.7607 17.1875H14.2295" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9.896 13.0208H15.1043" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+            hr
+            .basket-card.grid.items-center
+                picture 
+                    img(src="img/card1.jpg", alt="")
+                .grid.descr_grid.items-center
+                    .description_bascket 
+                        h2 однотонний чоловічий базовий світшот
+                        p розмір: 
+                            span S 
+                        form(action="#").flex.items-center.quantity_container
+                            button.minus(type="submit") -
+                            input(type="number", name="quantity" min="1" value="1")
+                            button.plus(type="submit") +
+                    .flex-between.items-center
+                        p.price_basket 1050 ₴
+                        form(action="#")
+                            button(type="submit").del 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                    <path d="M21.875 6.22967C18.4062 5.88592 14.9167 5.70883 11.4375 5.70883C9.375 5.70883 7.3125 5.813 5.25 6.02133L3.125 6.22967" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.854 5.17709L9.08317 3.81251C9.24984 2.82293 9.37484 2.08334 11.1353 2.08334H13.8644C15.6248 2.08334 15.7603 2.86459 15.9165 3.82293L16.1457 5.17709" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19.6361 9.52048L18.959 20.0101C18.8444 21.6455 18.7506 22.9163 15.8444 22.9163H9.1569C6.25065 22.9163 6.1569 21.6455 6.04232 20.0101L5.36523 9.52048" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10.7607 17.1875H14.2295" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9.896 13.0208H15.1043" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+            hr
+            .sum_container 
+                .flex.items-center
+                    p сума до оплати
+                    p.price_basket 1050 ₴
+            .flex.basket_cta
+                a.cta.catalog_cta(href="catalog.html") продовжити покупки
+                a.cta.black_cta(href="order.html") оформити замовлення
+
+                
+
+            
+        include components/footer
+        script(src="js/scripts.js") 
