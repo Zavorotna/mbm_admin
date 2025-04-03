@@ -308,8 +308,10 @@ video
 .category_block
     position: relative
     max-width: 370px
-    min-height: 440px
+    min-height: 240px
     border-radius: 5px
+    +media(768)
+        min-height: 440px
     a
         position: absolute
         bottom: 10% 

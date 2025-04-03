@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let color = input.value,
             span = input.nextElementSibling
         input.style.backgroundColor = color
-        console.log(color);
         span.style.border = "1px solid"
         span.style.borderColor = color === '#fff' ? '#000' : 'transparent'
     })
@@ -68,21 +67,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const dark = document.querySelector(".dark-bgc"),
         darkSucces = document.querySelector(".dark-bgc-succes"),
-        privacy = document.querySelector(".privacy_container"),
-        privacyBtn = document.querySelector(".privacyPolice"),
         cancelPopupPr = document.querySelector(".cancel_popup"),
-        forms = document.querySelectorAll("form"),
         succesPopup = document.querySelector("#successPopup")
-
-    // privacyBtn.addEventListener("click", function (e) {
-    //     e.preventDefault()
-    //     privacy.style.display = "block"
-    //     dark.style.display = "block"
-    // })
 
     cancelPopupPr.addEventListener("click", function (e) {
         e.preventDefault()
-        // privacy.style.display = "none"
         succesPopup.style.display = "none"
         dark.style.display = "none"
         darkSucces.style.display = "none"
@@ -94,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
             itemImgWidth = items[0].offsetWidth,
             isAnimatingImg = false
 
-        // console.log(itemImgWidth);
         function updateCarouselImg() {
             while (carousel.firstChild) {
                 carousel.removeChild(carousel.firstChild)
@@ -115,10 +103,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     isAnimatingImg = true
                     currentOffset -= 1;
 
-
                     carousel.style.transition = 'none'
                     carousel.style.transform = `translateX(${currentOffset}px)`
-                    // console.log(currentOffset);
                     if (Math.abs(currentOffset) >= itemImgWidth + 30) {
                         currentOffset = 0;
                         updateCarouselImg()
@@ -392,34 +378,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     darkSucces.style.transition = "opacity 0.5s ease"
     darkSucces.style.opacity = "0"
-
-    forms.forEach(form => {
-        form.addEventListener("submit", function (e) {
-            e.preventDefault()
-            popupSpivpracia.style.display = "none"
-            succesPopup.style.display = "block"
-            succesPopup.style.zIndex = "10"
-            dark.style.display = "none"
-            darkSucces.style.display = "block"
-
-            setTimeout(() => {
-                succesPopup.style.opacity = "1"
-                succesPopup.style.visibility = "visible"
-                darkSucces.style.opacity = "1"
-            }, 10)
-
-            setTimeout(() => {
-                succesPopup.style.opacity = "0"
-                succesPopup.style.visibility = "hidden"
-                darkSucces.style.opacity = "0"
+    document.querySelectorAll("form[action='sendorder.php'], form[action='senddata.php'], form[action='sendcontact.php']").forEach(form => {
+        form.addEventListener("submit", (e) => {
+            if (validateForm(form)) {
+                popupSpivpracia.style.display = "none"
+                cartPopup.style.display = "none"
+                succesPopup.style.display = "block"
+                succesPopup.style.zIndex = "10"
+                dark.style.display = "none"
+                darkSucces.style.display = "block"
 
                 setTimeout(() => {
-                    darkSucces.style.display = "none"
-                    succesPopup.style.display = "none"
-                }, 500)
+                    succesPopup.style.opacity = "1"
+                    succesPopup.style.visibility = "visible"
+                    darkSucces.style.opacity = "1"
+                }, 10);
+                function closeSuccessPopup() {
+                    succesPopup.style.opacity = "0"
+                    succesPopup.style.visibility = "hidden"
+                    darkSucces.style.opacity = "0"
 
-                form.submit()
-            }, 4000)
+                    setTimeout(() => {
+                        darkSucces.style.display = "none"
+                        succesPopup.style.display = "none"
+                    }, 500)
+                }
+                darkSucces.addEventListener("click", closeSuccessPopup)
+                const closeButton = succesPopup.querySelector(".successPopup .cancel_popup")
+                closeButton.addEventListener("click", closeSuccessPopup)
+            }
         })
     })
     //autoload video after click on document
@@ -472,12 +459,11 @@ document.addEventListener("DOMContentLoaded", function () {
             imageWidth,
             currentSlide = 0
         for (let i = 0; i < sliderImages.length; i++) {
-            console.log(mainImg.offsetHeight / 2);
             sliderImages[i].style.height = mainImg.offsetHeight / 2 - 2 + "px"
         }
         mainImg.style.height = cardMain.offsetHeight + "px"
         sliderContainer.style.height = mainImg.offsetHeight + "px"
-        // console.log(mainImg.offsetHeight);
+
         btnSlider.forEach(itemBtn => {
             if (sliderImages.length > 2) {
                 imageHeight = sliderImages[0].offsetHeight + 10,
@@ -487,7 +473,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 carouselContainer.style.height = containerHeight + "rem"
                 itemBtn.style.display = "block"
                 carouselContainer.style.padding = "55px 0 25rem"
-                // carouselContainer.style.margin = "0 0 25px"
             } else if (sliderImages.length == 2) {
                 imgBlock.style.display = "grid"
                 carouselContainer.style.display = "block"

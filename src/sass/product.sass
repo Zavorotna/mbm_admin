@@ -21,7 +21,8 @@
         width: 100%
         text-align: center
         border-radius: 3px 
-        border-collapse: collapse
+        border-collapse: separate
+        border-spacing: 0
         background-color: $black
         overflow: hidden
     thead
@@ -30,7 +31,10 @@
     td, th
         padding: 11rem
     td
-        border: 1px solid $black
+        border-bottom: 1px solid $black
+        border-right: 1px solid $black
+        &:first-child
+            border-left: 1px solid $black
     th + th
         border-left: 1px solid $white
     tbody
@@ -40,6 +44,9 @@
                 td
                     &:first-child
                         border-radius: 0 0 0 3px
+                    &:last-child
+                        border-radius: 0 0 3px 0
+                        
     .color
         flex-wrap: nowrap
         width: 100% 

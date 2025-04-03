@@ -34,17 +34,17 @@ html(lang="en")
                 .grid
                     .name
                         label(for='name') Імʼя*
-                        input#name(type='text' name='userName' minlength='3' maxlength='30' placeholder='Імʼя*' required='' oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯїЇєЄіІґҐs]/g, '')") 
+                        input#name(type='text' name='userName' minlength='3' maxlength='30' placeholder='Імʼя*' required oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯїЇєЄіІґҐs]/g, '')") 
                     .surname
                         label(for='surname')  Прізвище*
-                        input#surname(type='text' name='userSurname' minlength='3' maxlength='30' placeholder='Прізвище*' required='' oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯїЇєЄіІґҐs]/g, '')") 
+                        input#surname(type='text' name='userSurname' minlength='3' maxlength='30' placeholder='Прізвище*' required oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯїЇєЄіІґҐs]/g, '')") 
                 .grid
                     .nameParent
                         label(for='nameParent') По-батькові*
-                        input#nameParent(type='text' name='userParentName' minlength='3' maxlength='30' placeholder='По-батькові*' required='' oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯїЇєЄіІґҐs]/g, '')") 
+                        input#nameParent(type='text' name='userParentName' minlength='3' maxlength='30' placeholder='По-батькові*' required oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯїЇєЄіІґҐs]/g, '')") 
                     .phone
                         label(for='phone') Телефон*
-                        input.phoneInput.inputMask(type='tel' name='userPhone' placeholder='+380 ' required='' maxlength='13')
+                        input.phoneInput.inputMask(type='tel' name='userPhone' placeholder='+380 ' required maxlength='13')
                         span.error-tel
                 .grid 
                     .delivery_method 
@@ -56,26 +56,26 @@ html(lang="en")
                                 input(type="radio", name="post").np
                         label.arrow_select
                             span Регіон/область*
-                            select.region(name="region")
+                            select.region(name="region" required)
                                 option(value="0" selected disabled) Обрати 
                                 option(value="1") Хмельницький  
                         label.arrow_select 
                             span Населений пункт*
-                            select.region(name="region")
+                            select.region(name="region" required)
                                 option(value="0" selected disabled) Обрати 
                                 option(value="1") Хмельницький  
                         label Відділення пошти*
-                            input(type="text")
+                            input(type="text" required)
                     .pay_method 
                         h2 Оберіть спосіб оплати: 
                         label.items-center
-                            input(type="radio", name="pay")
+                            input(type="radio", name="pay" required)
                             span Оплата на рахунок
                         label.items-center
-                            input(type="radio", name="pay")
+                            input(type="radio", name="pay" required)
                             span Готівкою при отриманні
                         label.items-center
-                            input(type="radio", name="pay")
+                            input(type="radio", name="pay" required)
                             span Накладений платіж
                 .flex.basket_cta.order_cta
                     a.cta.catalog_cta(href="basket.html") назад у кошик
