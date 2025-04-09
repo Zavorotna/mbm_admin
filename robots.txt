@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Sitemap: https://mbm.com.ua/sitemap.xml
+Host:  https://mbm.com.ua/
