@@ -6,11 +6,11 @@
                 <path d="M1 1L6 6L11 1" stroke="#fff" stroke-linecap="round"/>
             </svg>
     .description-more
-        ul.mark 
-            li Тканина: якісна 95% турецька бавовна;
-            li Тип крою - звичайний;
-            li Круглий виріз;
-            li Манжети на резинці;
+        ul.mark(itemscope itemtype="http://schema.org/Product")
+            li(itemprop="description") Тканина: якісна 95% турецька бавовна;
+            li(itemprop="description") Тип крою - звичайний;
+            li(itemprop="description") Круглий виріз;
+            li(itemprop="description") Манжети на резинці;
 .info-item
     a.readmore(href="#").flex-between.items-center
         span Розмірна сітка

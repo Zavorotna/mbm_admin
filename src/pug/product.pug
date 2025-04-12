@@ -56,17 +56,17 @@ html(lang="en")
                                     <path d="M89 8L85 12L81 8" stroke="#1E1E1E" stroke-linecap="round"/>
                                 </svg>
                                 
-                        .main-img.general-img
+                        .main-img.general-img(itemscope itemtype="http://schema.org/Product")
                             picture 
-                                img.main-card-img(src="img/card1.jpg", alt="")
-                    .description_container 
-                        h1 однотонний чоловічий базовий світшот
+                                img.main-card-img(itemprop="image" src="img/card1.jpg", alt="")
+                    .description_container(itemscope itemtype="http://schema.org/Product")
+                        h1(itemprop="name") однотонний чоловічий базовий світшот
                         .flex.items-center.product_btn_change
                             a(href="#" data-target="rozdrib").toggle-btn.active_product роздріб
                             a(href="#" data-target="gurt").toggle-btn гурт
                         .description_product_one#rozdrib
-                            .price_block
-                                p.price 1050 ₴
+                            .price_block(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+                                p.price(itemprop="price") 1050 ₴
                             include components/description_product
                             form(action="") 
                                 .color_container
@@ -107,9 +107,9 @@ html(lang="en")
                                             span l
                                 button(type="submit").submit-btn.spivpracia_submit_btn додати в кошик
                         .description_product_opt.none_product#gurt
-                            .flex.items-center.price_block
-                                p.price 575 ₴
-                                p.price_rozdrib 575 ₴
+                            .flex.items-center.price_block(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+                                p.price(itemprop="price") 575 ₴
+                                p.price_rozdrib(itemprop="price") 575 ₴
                             include components/description_product
                             form(action="#")
                                 .color_container
