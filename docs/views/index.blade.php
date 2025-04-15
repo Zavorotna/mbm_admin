@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="український бренд МВМ">
+    <meta name="robots" content="index follow">
+    <meta name="title" content="Одяг для всієї родини від українського бренду МВМ">
+    <meta name="description" content="Інтернет-магазин МВМ — стильний та зручний одяг для жінок, чоловіків і дітей. Український бренд, власне виробництво, висока якість за приємними цінами. Продаж гуртом та в роздріб.">
+    <meta name="keywords" content="одяг від MBM, інтернет-магазин МВМ, одяг для всієї родини, інтернет-магазин одягу, жіночий одяг, чоловічий одяг, дитячий одяг, український виробник одягу, український бренд одягу, одяг гуртом та в роздріб, стильний та комфортний одяг">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>МВМ — Стильний і комфортний одяг для усієї родини</title>
+  </head>
+  <body> 
+    <div class="dark-bgc"></div>
+    <div class="dark-bgc-succes"></div>
+    <div class="successPopup" id="successPopup">
+      <div class="cancel_popup"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+<path d="M1 21L20.5816 1M21 21L1.41844 1" stroke="#121212" stroke-width="2" stroke-linecap="round"/>
+</svg> </a></div>
+      <div> <a href="index.html"><img src="img/logo.svg" alt=""></a></div>
+      <h2>дякуємо за замовлення!</h2>
+      <p>Ваше замовлення прийняте, і ми працюємо над його обробкою.</p>
+      <div class="cta_conatiner black_cta_popup"><a class="cta catalog_cta" href="">на головну</a></div>
+    </div>
+    <div class="spivpracia_popup"> <a class="cancel_spivpracia" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+<path d="M1 15L14.7071 1M15 15L1.29291 1" stroke="#121212" stroke-width="1.5" stroke-linecap="round"/>
+</svg></a>
+      <h2>Введіть свої дані і ми з Вами зв'яжемося! </h2>
+      <form action="sendcontact.php" method="post"> 
+        <div class="name">
+          <label for="name"> </label>
+          <input id="name" type="text" name="userName" minlength="3" maxlength="30" placeholder="введіть ваше імʼя*" required="" oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯїЇєЄіІґҐs]/g, '')">
+        </div>
+        <div class="phone">
+          <label for="phone"> </label>
+          <input class="phoneInput inputMask" type="tel" name="userPhone" placeholder="введіть ваш телефон*" required="" maxlength="13"><span class="error-tel"></span>
+        </div>
+        <input type="hidden" id="orderWebsiteURL2" name="orderWebsiteURL">
+        <div class="wrapper tac_form_btn">
+          <button class="submit-btn" type="submit">Відправити</button>
+        </div>
+      </form>
+    </div>
+    <header> 
+      <div class="wrapper flex-between items-center header">
+        <div class="logo"> <a class="flex-between items-center" href="index.html">
+            <picture> <img src="img/logo.svg" alt="Інтернет-магазин MBM" title="логотип MBM"></picture><span>Власне<span>виробництво одягу</span></span></a></div>
+        <nav class="nav"> 
+          <ul class="menu items-center">
+            <li class="cancel_li"><a class="cancel" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+<path d="M1 15L14.7071 1M15 15L1.29291 1" stroke="#121212" stroke-width="1.5" stroke-linecap="round"/>
+</svg></a></li>
+            <li> <a href="catalog.html">каталог</a></li>
+            <li> <a href="#spivpracia_container" data-target="spivpracia">співпраця</a></li>
+            <li> <a href="#delivery_container" data-target="delivery">оплата та доставка</a></li>
+            <li> <a href="#obmin_container" data-target="obmin">повернення та обмін</a></li>
+            <li> <a href="#contacts">контакти</a></li>
+            <li class="mobile_contacts"> <a class="items-center" href="tel:+3800676881050">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+<path d="M12 11.1012C10.0042 13.2018 4.91318 8.15653 6.91662 6.04795C8.13985 4.76052 6.75803 3.28923 5.99317 2.20778C4.5577 0.178146 1.40643 2.98034 1.50213 4.76287C1.80394 10.384 7.88462 17.0455 13.7729 16.4645C15.615 16.2827 17.7315 12.956 15.6186 11.7402C14.5621 11.1322 13.1118 9.93099 12 11.1012Z" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>067 688 10 50</a></li>
+          </ul>
+        </nav>
+        <div class="header_contacts flex-between items-center">
+          <div class="burger"> <span class="bord b1"></span><span class="bord b2"></span><span class="bord b3"></span></div><a class="flex-between items-center desctop_contacts" href="tel:+3800676881050">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+<path d="M12 11.1012C10.0042 13.2018 4.91318 8.15653 6.91662 6.04795C8.13985 4.76052 6.75803 3.28923 5.99317 2.20778C4.5577 0.178146 1.40643 2.98034 1.50213 4.76287C1.80394 10.384 7.88462 17.0455 13.7729 16.4645C15.615 16.2827 17.7315 12.956 15.6186 11.7402C14.5621 11.1322 13.1118 9.93099 12 11.1012Z" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>067 688 10 50</a><a class="cart" href="basket.html">
+             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" viewBox="0 0 19 22" fill="none">
+<path d="M5.99745 5.44444H4.66909C3.44405 5.44444 2.42728 6.34544 2.33999 7.50834L1.50605 18.6195C1.40951 19.9058 2.48004 21 3.83515 21H15.1648C16.52 21 17.5905 19.9058 17.4939 18.6195L16.66 7.50834C16.5727 6.34544 15.556 5.44444 14.3309 5.44444H13.0025M5.99745 5.44444V3.22222C5.99745 1.99492 7.04288 1 8.33248 1H10.6675C11.9571 1 13.0025 1.99492 13.0025 3.22222V5.44444M5.99745 5.44444H13.0025" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> <span class="circle"> <span class="number">99</span></span></a>
+        </div>
+      </div>
+    </header>
+    <main> 
+      <section class="black_bg main_section">
+        <div class="flex main_container">
+          <h1>Стильний і комфортний одяг для усієї родини</h1>
+          <p>Гурт та роздріб</p>
+          <div class="flex cta_main"><a class="cta catalog_cta" href="catalog.html">каталог</a><a class="cta black_cta spivpracia_btn" href="#">співпраця</a></div>
+        </div>
+        <div class="grid grid_main_container"> 
+          <div class="slider-images-1"><img src="img/main-bg1.jpg" alt="дівчина в ніжно-блакитному худі" title="жіноче блакитне худі"><img src="img/main-bg1-2.jpg" alt="хлопець в білому худі" title="чоловіче біле худі"><img src="img/main-bg1-3.jpg" alt="хлопець в білому світшоті" title="чоловічий білий світшот"><img src="img/main-bg1-4.jpg" alt="хлопець в сірому худі і дівчина в сірій футболці" title="молодіжний одяг сірого кольору"><img src="img/main-bg1-5.jpg" alt="хлопець і дівчина в сірих худі " title="сірі молодіжні худі"></div>
+          <video autoplay loop muted playsinline>
+            <source src="video/video_mbm.mp4" type="video/mp4">
+          </video>
+          <video autoplay loop muted playsinline>
+            <source src="video/video_mbm2.mp4" type="video/mp4">
+          </video>
+          <div class="slider-images-2"><img src="img/main-bg2-1.jpg" alt="дівчина в бежевому худі" title="жіноче бежеве худі"><img src="img/main-bg2-2.jpg" alt="дівчина в білому світшоті з вишнями" title="білий світшот з вишнями"><img src="img/main-bg2-3.jpg" alt="дівчина в рожевому світшоті" title="жіночий рожевий світшот оверсайз"><img src="img/main-bg2.jpg" alt="дівчина в білому світшоті Brooklyn" title="жіночий білий світшот з написом"></div>
+        </div>
+      </section>
+      <div class="move-text"> 
+        <div class="content-slider pos-r flex">
+          <h3 class="pos-r">безкоштовна доставка від 2499 ₴</h3>
+          <h3 class="pos-r">безкоштовна доставка від 2499 ₴</h3>
+          <h3 class="pos-r">безкоштовна доставка від 2499 ₴</h3>
+          <h3 class="pos-r">безкоштовна доставка від 2499 ₴</h3>
+          <h3 class="pos-r">безкоштовна доставка від 2499 ₴</h3>
+          <h3 class="pos-r">безкоштовна доставка від 2499 ₴</h3>
+          <h3 class="pos-r">безкоштовна доставка від 2499 ₴</h3>
+          <h3 class="pos-r">безкоштовна доставка від 2499 ₴</h3>
+        </div>
+      </div>
+      <section class="wrapper container">
+        <div class="grid col-4">
+          <div class="category_block woman"><a class="cta black_cta" href="#">для жінок</a></div>
+          <div class="category_block man"><a class="cta black_cta" href="#">для чоловіків</a></div>
+          <div class="category_block girl"><a class="cta black_cta" href="#">для дівчаток</a></div>
+          <div class="category_block boy"><a class="cta black_cta" href="#">для хлопчиків</a></div>
+        </div>
+      </section>
+      <section class="black_bg">
+        <div class="wrapper grid col-2">
+          <div class="about-img"> 
+            <picture> <img src="img/sec-3-bg.jpg" alt="брюнетка в чорному худі" title="жіноче чорне спортивне худі" loading="lazy"></picture>
+          </div>
+          <div class="about_container container">
+            <h2>МВМ — комфорт і стиль для кожного дня</h2>
+            <p>Ми — український бренд із власним виробництвом, що спеціалізується на створенні дитячого, жіночого та чоловічого одягу. </p>
+            <p>Наша мета — забезпечити кожного комфортним та стильним одягом.</p>
+            <div class="flex"><a class="cta catalog_cta" href="catalog.html">каталог</a><a class="cta black_cta spivpracia_btn" href="#">співпраця</a></div>
+            <div class="grid col-4 about-pic">
+              <picture> <img src="img/sec-3-1.jpg" alt="довгокоса дівчина в білому світшоті" title="дівчачий біли світшот" loading="lazy"></picture>
+              <picture> <img src="img/sec-3-2.jpg" alt="хлопчик в білій футболці-поло" title="біла футболка-поло" loading="lazy"></picture>
+              <picture> <img src="img/sec-3-3.jpg" alt="дівчина в чорному світшоті" title="дівчачий чорний світшот з малюнками" loading="lazy"></picture>
+              <picture> <img src="img/sec-3-4.jpg" alt="чоловік в чорному світшоті" title="чоловічий чорний світшот з написом" loading="lazy"></picture>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="same_product container wrapper">
+        <h2>популярні товари</h2>
+        <div class="grid col-4 catalog_container">
+          <figure class="card"> 
+            <figcaption><a class="mask-card" href="product.html"></a>
+              <picture> <img src="img/card2.jpg" alt="" loading="lazy"></picture>
+              <h2>Спортивне Худі oversize </h2>
+              <p class="price">800 ₴</p>
+              <form action="#"> 
+                <div class="size"> 
+                  <label>
+                    <select name="size"> 
+                      <option value="">XS</option>
+                      <option value="">S</option>
+                      <option value="">M</option>
+                      <option value="">L</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="flex-between items-center">
+                  <div class="color flex items-center">
+                    <label>
+                      <input type="radio" name="color" value="#fff"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="blue"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="red"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="#000"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="#ccc"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="brown"><span></span>
+                    </label>
+                  </div>
+                  <button class="flex"> <span>в кошик</span><svg xmlns="http://www.w3.org/2000/svg" width="13rem" height="16rem" viewBox="0 0 13 16" fill="none">
+<path d="M4.14821 4.11111H3.21837C2.36083 4.11111 1.64909 4.74181 1.588 5.55584L1.00424 13.3336C0.936654 14.2341 1.68602 15 2.63461 15H10.5654C11.514 15 12.2633 14.2341 12.1958 13.3336L11.612 5.55584C11.5509 4.74181 10.8392 4.11111 9.98163 4.11111H9.05178M4.14821 4.11111V2.55556C4.14821 1.69645 4.88002 1 5.78274 1H7.41726C8.31998 1 9.05178 1.69645 9.05178 2.55556V4.11111M4.14821 4.11111H9.05178" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                  </button>
+                </div>
+              </form>
+            </figcaption>
+          </figure>
+          <figure class="card"> 
+            <figcaption><a class="mask-card" href="product.html"></a>
+              <picture> <img src="img/card2.jpg" alt="" loading="lazy"></picture>
+              <h2>Спортивне Худі oversize </h2>
+              <p class="price">800 ₴</p>
+              <form action="#"> 
+                <div class="size"> 
+                  <label>
+                    <select name="size"> 
+                      <option value="">XS</option>
+                      <option value="">S</option>
+                      <option value="">M</option>
+                      <option value="">L</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="flex-between items-center">
+                  <div class="color flex items-center">
+                    <label>
+                      <input type="radio" name="color" value="#fff"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="blue"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="red"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="#000"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="#ccc"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="brown"><span></span>
+                    </label>
+                  </div>
+                  <button class="flex"> <span>в кошик</span><svg xmlns="http://www.w3.org/2000/svg" width="13rem" height="16rem" viewBox="0 0 13 16" fill="none">
+<path d="M4.14821 4.11111H3.21837C2.36083 4.11111 1.64909 4.74181 1.588 5.55584L1.00424 13.3336C0.936654 14.2341 1.68602 15 2.63461 15H10.5654C11.514 15 12.2633 14.2341 12.1958 13.3336L11.612 5.55584C11.5509 4.74181 10.8392 4.11111 9.98163 4.11111H9.05178M4.14821 4.11111V2.55556C4.14821 1.69645 4.88002 1 5.78274 1H7.41726C8.31998 1 9.05178 1.69645 9.05178 2.55556V4.11111M4.14821 4.11111H9.05178" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                  </button>
+                </div>
+              </form>
+            </figcaption>
+          </figure>
+          <figure class="card"> 
+            <figcaption><a class="mask-card" href="product.html"></a>
+              <picture> <img src="img/card2.jpg" alt="" loading="lazy"></picture>
+              <h2>Спортивне Худі oversize </h2>
+              <p class="price">800 ₴</p>
+              <form action="#"> 
+                <div class="size"> 
+                  <label>
+                    <select name="size"> 
+                      <option value="">XS</option>
+                      <option value="">S</option>
+                      <option value="">M</option>
+                      <option value="">L</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="flex-between items-center">
+                  <div class="color flex items-center">
+                    <label>
+                      <input type="radio" name="color" value="#fff"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="blue"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="red"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="#000"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="#ccc"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="brown"><span></span>
+                    </label>
+                  </div>
+                  <button class="flex"> <span>в кошик</span><svg xmlns="http://www.w3.org/2000/svg" width="13rem" height="16rem" viewBox="0 0 13 16" fill="none">
+<path d="M4.14821 4.11111H3.21837C2.36083 4.11111 1.64909 4.74181 1.588 5.55584L1.00424 13.3336C0.936654 14.2341 1.68602 15 2.63461 15H10.5654C11.514 15 12.2633 14.2341 12.1958 13.3336L11.612 5.55584C11.5509 4.74181 10.8392 4.11111 9.98163 4.11111H9.05178M4.14821 4.11111V2.55556C4.14821 1.69645 4.88002 1 5.78274 1H7.41726C8.31998 1 9.05178 1.69645 9.05178 2.55556V4.11111M4.14821 4.11111H9.05178" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                  </button>
+                </div>
+              </form>
+            </figcaption>
+          </figure>
+          <figure class="card"> 
+            <figcaption><a class="mask-card" href="product.html"></a>
+              <picture> <img src="img/card2.jpg" alt="" loading="lazy"></picture>
+              <h2>Спортивне Худі oversize </h2>
+              <p class="price">800 ₴</p>
+              <form action="#"> 
+                <div class="size"> 
+                  <label>
+                    <select name="size"> 
+                      <option value="">XS</option>
+                      <option value="">S</option>
+                      <option value="">M</option>
+                      <option value="">L</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="flex-between items-center">
+                  <div class="color flex items-center">
+                    <label>
+                      <input type="radio" name="color" value="#fff"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="blue"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="red"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="#000"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="#ccc"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="brown"><span></span>
+                    </label>
+                  </div>
+                  <button class="flex"> <span>в кошик</span><svg xmlns="http://www.w3.org/2000/svg" width="13rem" height="16rem" viewBox="0 0 13 16" fill="none">
+<path d="M4.14821 4.11111H3.21837C2.36083 4.11111 1.64909 4.74181 1.588 5.55584L1.00424 13.3336C0.936654 14.2341 1.68602 15 2.63461 15H10.5654C11.514 15 12.2633 14.2341 12.1958 13.3336L11.612 5.55584C11.5509 4.74181 10.8392 4.11111 9.98163 4.11111H9.05178M4.14821 4.11111V2.55556C4.14821 1.69645 4.88002 1 5.78274 1H7.41726C8.31998 1 9.05178 1.69645 9.05178 2.55556V4.11111M4.14821 4.11111H9.05178" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                  </button>
+                </div>
+              </form>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="same_product container wrapper">
+        <h2>Новинки</h2>
+        <div class="grid col-4 catalog_container">
+          <figure class="card"> 
+            <figcaption><a class="mask-card" href="product.html"></a>
+              <picture> <img src="img/card2.jpg" alt="" loading="lazy"></picture>
+              <h2>Спортивне Худі oversize </h2>
+              <p class="price">800 ₴</p>
+              <form action="#"> 
+                <div class="size"> 
+                  <label>
+                    <select name="size"> 
+                      <option value="">XS</option>
+                      <option value="">S</option>
+                      <option value="">M</option>
+                      <option value="">L</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="flex-between items-center">
+                  <div class="color flex items-center">
+                    <label>
+                      <input type="radio" name="color" value="#fff"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="blue"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="red"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="#000"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="#ccc"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="brown"><span></span>
+                    </label>
+                  </div>
+                  <button class="flex"> <span>в кошик</span><svg xmlns="http://www.w3.org/2000/svg" width="13rem" height="16rem" viewBox="0 0 13 16" fill="none">
+<path d="M4.14821 4.11111H3.21837C2.36083 4.11111 1.64909 4.74181 1.588 5.55584L1.00424 13.3336C0.936654 14.2341 1.68602 15 2.63461 15H10.5654C11.514 15 12.2633 14.2341 12.1958 13.3336L11.612 5.55584C11.5509 4.74181 10.8392 4.11111 9.98163 4.11111H9.05178M4.14821 4.11111V2.55556C4.14821 1.69645 4.88002 1 5.78274 1H7.41726C8.31998 1 9.05178 1.69645 9.05178 2.55556V4.11111M4.14821 4.11111H9.05178" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                  </button>
+                </div>
+              </form>
+            </figcaption>
+          </figure>
+          <figure class="card"> 
+            <figcaption><a class="mask-card" href="product.html"></a>
+              <picture> <img src="img/card2.jpg" alt="" loading="lazy"></picture>
+              <h2>Спортивне Худі oversize </h2>
+              <p class="price">800 ₴</p>
+              <form action="#"> 
+                <div class="size"> 
+                  <label>
+                    <select name="size"> 
+                      <option value="">XS</option>
+                      <option value="">S</option>
+                      <option value="">M</option>
+                      <option value="">L</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="flex-between items-center">
+                  <div class="color flex items-center">
+                    <label>
+                      <input type="radio" name="color" value="#fff"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="blue"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="red"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="#000"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="#ccc"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="brown"><span></span>
+                    </label>
+                  </div>
+                  <button class="flex"> <span>в кошик</span><svg xmlns="http://www.w3.org/2000/svg" width="13rem" height="16rem" viewBox="0 0 13 16" fill="none">
+<path d="M4.14821 4.11111H3.21837C2.36083 4.11111 1.64909 4.74181 1.588 5.55584L1.00424 13.3336C0.936654 14.2341 1.68602 15 2.63461 15H10.5654C11.514 15 12.2633 14.2341 12.1958 13.3336L11.612 5.55584C11.5509 4.74181 10.8392 4.11111 9.98163 4.11111H9.05178M4.14821 4.11111V2.55556C4.14821 1.69645 4.88002 1 5.78274 1H7.41726C8.31998 1 9.05178 1.69645 9.05178 2.55556V4.11111M4.14821 4.11111H9.05178" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                  </button>
+                </div>
+              </form>
+            </figcaption>
+          </figure>
+          <figure class="card"> 
+            <figcaption><a class="mask-card" href="product.html"></a>
+              <picture> <img src="img/card2.jpg" alt="" loading="lazy"></picture>
+              <h2>Спортивне Худі oversize </h2>
+              <p class="price">800 ₴</p>
+              <form action="#"> 
+                <div class="size"> 
+                  <label>
+                    <select name="size"> 
+                      <option value="">XS</option>
+                      <option value="">S</option>
+                      <option value="">M</option>
+                      <option value="">L</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="flex-between items-center">
+                  <div class="color flex items-center">
+                    <label>
+                      <input type="radio" name="color" value="#fff"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="blue"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="red"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="#000"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="#ccc"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="brown"><span></span>
+                    </label>
+                  </div>
+                  <button class="flex"> <span>в кошик</span><svg xmlns="http://www.w3.org/2000/svg" width="13rem" height="16rem" viewBox="0 0 13 16" fill="none">
+<path d="M4.14821 4.11111H3.21837C2.36083 4.11111 1.64909 4.74181 1.588 5.55584L1.00424 13.3336C0.936654 14.2341 1.68602 15 2.63461 15H10.5654C11.514 15 12.2633 14.2341 12.1958 13.3336L11.612 5.55584C11.5509 4.74181 10.8392 4.11111 9.98163 4.11111H9.05178M4.14821 4.11111V2.55556C4.14821 1.69645 4.88002 1 5.78274 1H7.41726C8.31998 1 9.05178 1.69645 9.05178 2.55556V4.11111M4.14821 4.11111H9.05178" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                  </button>
+                </div>
+              </form>
+            </figcaption>
+          </figure>
+          <figure class="card"> 
+            <figcaption><a class="mask-card" href="product.html"></a>
+              <picture> <img src="img/card2.jpg" alt="" loading="lazy"></picture>
+              <h2>Спортивне Худі oversize </h2>
+              <p class="price">800 ₴</p>
+              <form action="#"> 
+                <div class="size"> 
+                  <label>
+                    <select name="size"> 
+                      <option value="">XS</option>
+                      <option value="">S</option>
+                      <option value="">M</option>
+                      <option value="">L</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="flex-between items-center">
+                  <div class="color flex items-center">
+                    <label>
+                      <input type="radio" name="color" value="#fff"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="blue"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="red"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="#000"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="#ccc"><span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="color" value="brown"><span></span>
+                    </label>
+                  </div>
+                  <button class="flex"> <span>в кошик</span><svg xmlns="http://www.w3.org/2000/svg" width="13rem" height="16rem" viewBox="0 0 13 16" fill="none">
+<path d="M4.14821 4.11111H3.21837C2.36083 4.11111 1.64909 4.74181 1.588 5.55584L1.00424 13.3336C0.936654 14.2341 1.68602 15 2.63461 15H10.5654C11.514 15 12.2633 14.2341 12.1958 13.3336L11.612 5.55584C11.5509 4.74181 10.8392 4.11111 9.98163 4.11111H9.05178M4.14821 4.11111V2.55556C4.14821 1.69645 4.88002 1 5.78274 1H7.41726C8.31998 1 9.05178 1.69645 9.05178 2.55556V4.11111M4.14821 4.11111H9.05178" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                  </button>
+                </div>
+              </form>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="advantages_container black_bg"> 
+        <div class="wrapper grid col_3_adv">
+          <div class="bg1"> </div>
+          <div class="bg2 flex items-center">
+            <div class="dark-mask"></div>
+            <h2>Чому варто купувати у нас?</h2>
+            <div class="flex items-center">
+              <p class="transparent_cta">Власне виробництво</p>
+              <p class="transparent_cta">Висока якість матеріалів</p>
+              <p class="transparent_cta">> 20 років на ринку</p>
+            </div>
+          </div>
+          <div class="bg3"></div>
+        </div>
+      </section>
+      <section class="wrapper reviews_container container">
+        <h2>відгуки</h2>
+        <div class="grid col-3">
+          <div class="review"> 
+            <picture> <img src="img/rev1.png" alt="жінка в чорному худі та джинсах" title="чорне жіноче худі" loading="lazy"></picture>
+          </div>
+          <div class="review"> 
+            <picture> <img src="img/rev2.png" alt="чоловік в окулярах в сірому світшоті" title="чоловічий сірий світшот" loading="lazy"></picture>
+          </div>
+          <div class="review"> 
+            <picture> <img src="img/rev3.png" alt="брюнетка в білому худі та джинсах" title="біле жіноче худі" loading="lazy"></picture>
+          </div>
+        </div>
+        <div class="pagination flex items-center"><a class="pag-cta flex items-center" href="#">1</a><a class="pag-cta flex items-center" href="#">2</a><a class="pag-cta flex items-center" href="#">3</a><a class="arrow" href="#">
+             <svg xmlns="http://www.w3.org/2000/svg" width="31" height="8" viewBox="0 0 31 8" fill="none">
+<path d="M30.3536 4.35355C30.5488 4.15829 30.5488 3.84171 30.3536 3.64644L27.1716 0.464464C26.9763 0.269202 26.6597 0.269202 26.4645 0.464464C26.2692 0.659726 26.2692 0.976308 26.4645 1.17157L29.2929 4L26.4645 6.82842C26.2692 7.02369 26.2692 7.34027 26.4645 7.53553C26.6597 7.73079 26.9763 7.73079 27.1716 7.53553L30.3536 4.35355ZM4.37114e-08 4.5L30 4.5L30 3.5L-4.37114e-08 3.5L4.37114e-08 4.5Z" fill="#B9B9B9"/>
+</svg></a></div>
+      </section>
+      <section class="info_container wrapper container">
+        <h2>інформація</h2>
+        <div class="description-info"> 
+          <div class="info-item" id="delivery_container"><a class="readmore flex-between items-center" href="#"><span>умови доставки та оплати </span><span class="svg_btn">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+<path d="M1 1L6 6L11 1" stroke="white" stroke-linecap="round"/>
+</svg></span></a>
+            <div class="description-more" id="delivery">
+              <div>
+                <p class="head_info">Інтернет-магазин «MBM» здійснює доставку товарів по всій території України.</p>
+                <ul class="mark">
+                  <li>Термін доставки 1-3 днів з моменту підтвердження замовлення;</li>
+                  <li>Працюємо з «Новою поштою» та «Укрпоштою».</li>
+                </ul>
+              </div>
+              <div class="post-icon">
+                <picture> <img src="img/np.png" alt="Доставка MBM Укрпоштою" title=""></picture>
+              </div>
+              <div>
+                <p class="head_info">Безкоштовно при вартості замовлення від 2499 ₴. Умови безкоштовної доставки по Україні:</p>
+                <ul class="mark">
+                  <li>100% передоплата;</li>
+                  <li>Замовлення на суму від 2499 ₴;</li>
+                  <li>Доставка здійснюється з відділення пошти у відділення пошти;</li>
+                  <li>Доставка в одному напрямку.</li>
+                </ul>
+                <p>У разі обміну товару належної якості, доставка-повернення здійснюється за рахунок покупця.</p>
+              </div>
+              <div class="post-icon">
+                <div> 
+                  <picture> <img src="img/up.png" alt="Доставка MBM Новою поштою" title=""></picture>
+                </div>
+              </div>
+              <div>
+                <p class="head_info">Безкоштовно при вартості замовлення від 2499 ₴. Умови безкоштовної доставки по Україні:</p>
+                <ul class="mark">
+                  <li>100% передоплата;</li>
+                  <li>Замовлення на суму від 2499 ₴;</li>
+                  <li>Доставка здійснюється з відділення пошти у відділення пошти;</li>
+                  <li>Доставка в одному напрямку.</li>
+                </ul>
+                <p>У разі обміну товару належної якості, доставка-повернення здійснюється за рахунок покупця.</p>
+              </div>
+              <div>
+                <p class="head_info">Міжнародна доставка.</p>
+                <ul class="mark">
+                  <li>Ми доставляємо замовлення по всьому світу.</li>
+                  <li>Відправку здійснюємо Новою Поштою.</li>
+                  <li>Термін доставки – 14-21 день, проте, у зв’язку з військовим станом в Україні, час доставки може відрізнятися.</li>
+                </ul>
+              </div>
+              <p class="head_info">Вартість доставки визначається за тарифами компанії-відправника.</p>
+            </div>
+          </div>
+          <div class="info-item" id="obmin_container"><a class="readmore flex-between items-center" href="#"> <span>Повернення та обмін</span><span class="svg_btn">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+<path d="M1 1L6 6L11 1" stroke="white" stroke-linecap="round"/>
+</svg></span></a>
+            <div class="description-more" id="obmin">
+              <div>
+                <p class="head_info">Повернення здійснюється через служби доставки «Нова Пошта» протягом 2 днів після покупки.</p>
+                <p>Після отримання товару наші менеджери оглядають його на предмет носіння або інших пошкоджень і повертають зворотні кошти на картку.</p>
+              </div>
+              <div>
+                <p class="head_info">Товар повинен мати продажний вигляд: </p>
+                <ul class="mark">
+                  <li>Максимально охайний.</li>
+                  <li>Не мати слідів носіння та інших ушкоджень.</li>
+                  <li>Обов’язкова наявність усіх бірок.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="head_info">Обмін можна здійснити протягом 2 днів. </p>
+              </div>
+            </div>
+          </div>
+          <div class="info-item" id="spivpracia_container"><a class="readmore flex-between items-center" href="#"> <span>Умови співпраці</span><span class="svg_btn">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+<path d="M1 1L6 6L11 1" stroke="white" stroke-linecap="round"/>
+</svg></span></a>
+            <div class="description-more" id="spivpracia">
+              <div>
+                <p class="head_info">Почати співпрацювати з нами - легко! </p>
+                <p>Ми пропонуємо якісний готовий одяг для вашого бізнесу за вигідними умовами. Незалежно від масштабу вашої діяльності — роздріб, опт чи онлайн-продажі — ми готові стати вашим надійним партнером.</p>
+              </div>
+              <div>
+                <p class="head_info">Етапи співпраці:</p>
+                <ul class="mark">
+                  <li>Ознайомтесь із нашим каталогом готового одягу на сайті.</li>
+                  <li>Зв’яжіться з нашим менеджером для уточнення деталей замовлення.</li>
+                  <li>Оформіть заявку та отримайте своє замовлення у зручний для вас термін.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="head_info">Умови співпраці:</p>
+                <ul class="mark">
+                  <li>Мінімальне замовлення - 1 ростовка.</li>
+                  <li>Повна передоплата або часткова оплата за домовленістю.</li>
+                  <li>Доставка по Україні або закордон.</li>
+                </ul>
+              </div>
+              <p class="head_info">Заповніть форму на сайті або зв'яжіться з нами за контактами, вказаними нижче. Наші менеджери проконсультують вас та допоможуть зробити перший крок до реалізації вашої ідеї.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container black_bg">
+        <div class="wrapper start_buisnes">
+          <h2>розпочніть прибутковий бізнес з MBM!</h2>
+          <p>Співпрацювати з нами по опту — це вигідно, зручно та надійно! Ми є виробником, тому гарантуємо високу якість флісових костюмів за найкращими цінами. Пропонуємо широкий асортимент моделей, швидку доставку по Україні та гнучкі умови для кожного партнера.</p>
+          <div class="grid items-center col-3">
+            <p class="transparent_cta">Товар у наявності</p>
+            <p class="transparent_cta">Вигідні ціни</p>
+            <p class="transparent_cta">Повернення та обмін товару</p>
+          </div>
+        </div>
+      </section>
+      <section class="wrapper container"> 
+        <h2>контакти</h2>
+        <div class="wrapper-contact" id="contacts">
+          <div class="contact-page flex-between">
+            <div class="social-contact page-contact">
+              <h2>наші соцмережі:</h2>
+              <p class="flex item-center tktk"><a class="flex items-center" href="https://www.tiktok.com/@streetwear_mbm" target="blank">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+<g clip-path="url(#clip0_148_5295)">
+<path d="M24.5 12.5C24.5 19.1274 19.1274 24.5 12.5 24.5C5.87258 24.5 0.5 19.1274 0.5 12.5C0.5 5.87258 5.87258 0.5 12.5 0.5C19.1274 0.5 24.5 5.87258 24.5 12.5Z" fill="#121212" stroke="black"/>
+<path d="M9.125 17.5C9.25 17.625 9.375 17.75 9.5 17.875C9.875 18.25 10.375 18.375 10.875 18.375C12.125 18.5 13.25 17.5 13.375 16.25V16.125C13.375 12.375 13.375 8.625 13.375 4.875C13.375 4.625 13.375 4.625 13.625 4.625C14.25 4.625 14.75 4.625 15.375 4.625H15.5V4.75C15.75 5.75 16.25 6.5 17.125 7.125L17.25 7.25C17.25 7.25 17.375 7.25 17.375 7.375C17.5 7.5 17.625 7.625 17.75 7.625C18.25 8 18.75 8.25 19.25 8.375H19.375V8.5C19.375 9.125 19.375 9.875 19.375 10.5C19.375 10.625 19.375 10.625 19.25 10.625C18.75 10.625 18.25 10.5 17.875 10.5C17.125 10.375 16.375 10 15.625 9.5C15.625 9.5 15.5 9.375 15.5 9.5V9.625C15.5 11.5 15.5 13.375 15.5 15.25C15.5 16.5 15.125 17.75 14.25 18.75C13.375 19.75 12.25 20.375 10.875 20.625C9.875 20.75 8.75 20.625 7.875 20.125C7.75 20 7.625 20 7.375 19.875L7.25 19.75C6.875 19.5 6.75 19.125 6.5 18.75C6.125 18.25 6 17.625 5.875 17C5.875 16.625 5.75 16.25 5.75 15.875C5.875 14.625 6.25 13.625 7 12.75C7.625 12 8.5 11.5 9.375 11.125C9.75 11 10.125 10.875 10.625 10.875C10.75 10.875 10.75 10.875 10.875 10.875H11V11C11 11.625 11 12.375 11 13C11 13 11 13 11 13.125C11 13.25 11 13.25 10.875 13.25C10.75 13.25 10.5 13.125 10.375 13.125C10.125 13.125 9.75 13.125 9.5 13.25C8.625 13.625 8 14.25 7.875 15.25C7.75 16.25 8.125 17 8.875 17.5C9 17.375 9.125 17.5 9.125 17.5Z" fill="white"/>
+<path d="M7.375 19.875C8 20.25 8.75 20.5 9.375 20.625C9.75 20.625 10.125 20.75 10.375 20.625C11.5 20.625 12.625 20.125 13.5 19.375C14.375 18.625 15 17.75 15.25 16.625C15.375 16.25 15.375 15.875 15.375 15.625C15.375 15.375 15.375 15.25 15.375 15C15.375 13.25 15.375 11.5 15.375 9.75V9.625H15.5C16.125 10 16.75 10.375 17.5 10.625C17.875 10.75 18.375 10.75 18.75 10.875C18.875 10.875 19.125 10.875 19.25 10.875C19.375 10.875 19.375 10.875 19.375 10.75C19.375 10.625 19.375 10.625 19.375 10.5C19.375 9.875 19.375 9.25 19.375 8.75V8.625C19.5 8.625 19.75 8.625 19.875 8.75C20 8.75 20.125 8.75 20.125 8.75C20.125 8.75 20.25 8.75 20.25 8.875C20.25 9.75 20.25 10.625 20.25 11.5C20.25 11.625 20.25 11.625 20.125 11.625C19.875 11.625 19.625 11.625 19.375 11.625C18.875 11.5 18.25 11.375 17.75 11.25C17.25 11 16.75 10.75 16.375 10.5C16.375 10.5 16.375 10.5 16.25 10.375V10.5C16.25 12.375 16.25 14.25 16.25 16.125C16.25 17.125 16 18.125 15.5 18.875C14.875 19.875 14 20.625 12.75 21C12 21.25 11.375 21.375 10.625 21.25C9.5 21.25 8.375 20.75 7.375 19.875Z" fill="#E31F25"/>
+<path d="M15.625 4.75C15.5 4.75 15.5 4.75 15.625 4.75C14.875 4.75 14.25 4.75 13.625 4.75C13.5 4.75 13.5 4.75 13.5 4.875C13.5 8.625 13.5 12.375 13.5 16C13.5 16.25 13.5 16.5 13.375 16.75C13.125 17.625 12.5 18.25 11.625 18.375C10.625 18.625 9.875 18.25 9.25 17.5C9.375 17.625 9.625 17.625 9.875 17.625C10.5 17.75 11.125 17.625 11.625 17.375C12.25 17 12.625 16.375 12.75 15.75C12.75 15.625 12.75 15.5 12.75 15.375C12.75 11.625 12.75 7.875 12.75 4.25C12.75 4.125 12.75 4.125 12.875 4.125C13.75 4.125 14.625 4.125 15.5 4.125C15.625 4.125 15.625 4.125 15.625 4.25C15.5 4.25 15.5 4.5 15.625 4.75Z" fill="#0CBAC6"/>
+<path d="M11 10.875C10.5 10.875 10 10.875 9.5 11.125C8.75 11.375 8.125 11.75 7.5 12.25C6.75 12.875 6.25 13.75 6 14.75C5.875 15.125 5.875 15.5 5.875 15.75C5.875 16 5.875 16.125 5.875 16.375C5.875 17 6 17.5 6.25 18.125C6.5 18.75 6.875 19.25 7.25 19.75C7.125 19.75 7.125 19.625 7 19.5C6.125 18.875 5.5 18 5.25 16.875C5.125 16.625 5 16.25 5 15.875C5 15.625 5 15.375 5 15C5 14.375 5.25 13.75 5.5 13.25C5.75 12.625 6.125 12.125 6.625 11.625C7.125 11.125 7.75 10.625 8.5 10.375C9 10.25 9.375 10.125 9.875 10.125C10.25 10.125 10.625 10.125 10.875 10.125C10.875 10.125 11 10.125 11 10.25C11 10.375 11 10.625 11 10.875Z" fill="#0CBAC6"/>
+<path d="M9.12502 17.5C8.87502 17.375 8.75002 17.25 8.62502 17.125C8.25002 16.75 8.00002 16.25 7.87502 15.625C7.75002 14.375 8.50002 13.375 9.50002 13C10 12.875 10.375 12.875 10.875 13C10.875 13 10.875 13 11 13V12.875C11 12.25 11 11.5 11 10.875V10.75C11.25 10.75 11.5 10.75 11.75 10.75C11.75 11.625 11.75 12.5 11.75 13.5V13.625C11.625 13.625 11.5 13.625 11.375 13.5C10.625 13.375 10 13.625 9.50002 14C9.00002 14.375 8.75002 14.875 8.62502 15.5C8.62502 16.375 8.75002 16.875 9.12502 17.5Z" fill="#E31F25"/>
+<path d="M17.375 7.375C17.125 7.25 16.875 7 16.625 6.75C16 6.125 15.75 5.5 15.5 4.75C15.75 4.75 16 4.75 16.25 4.75C16.25 5.375 16.5 6 16.75 6.625C17 6.875 17.125 7.125 17.375 7.375Z" fill="#E31F25"/>
+<path d="M19.5 8.625C18.75 8.5 18.25 8.125 17.625 7.75C17.625 7.625 17.5 7.5 17.5 7.5C17.5 7.5 17.5 7.5 17.625 7.5C18 7.75 18.5 7.875 19 8C19.125 8 19.375 8 19.625 8C19.75 8 19.75 8 19.75 8.125C19.5 8.25 19.5 8.375 19.5 8.625Z" fill="#0CBAC6"/>
+</g>
+<defs>
+<clipPath id="clip0_148_5295">
+<rect width="25" height="25" fill="white"/>
+</clipPath>
+</defs>
+</svg><span>streetwear_mbm</span></a></p>
+              <p class="flex item-center fb"><a class="flex items-center" href="https://www.facebook.com/mbm.khm" target="blank">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+<g clip-path="url(#clip0_148_5309)">
+<path d="M12.5 0C5.625 0 0 5.625 0 12.5C0 18.75 4.625 23.875 10.5 24.875V16.125H7.375V12.5H10.5V9.75C10.5 6.625 12.375 4.875 15.25 4.875C16.625 4.875 18 5.125 18 5.125V8.25H16.375C14.875 8.25 14.375 9.25 14.375 10.25V12.5H17.875L17.375 16.125H14.5V24.875C20.375 23.875 25 18.75 25 12.5C25 5.625 19.375 0 12.5 0Z" fill="#1677F0"/>
+</g>
+<defs>
+<clipPath id="clip0_148_5309">
+<rect width="25" height="25" fill="white"/>
+</clipPath>
+</defs>
+</svg><span>mbm.khm</span></a></p>
+              <p class="flex item-center inst"><a class="flex items-center" href="https://www.instagram.com/mbm_khm/" target="blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+<g clip-path="url(#clip0_148_5313)">
+<path d="M12.5 23.375C18.5751 23.375 23.5 18.4501 23.5 12.375C23.5 6.29987 18.5751 1.375 12.5 1.375C6.42487 1.375 1.5 6.29987 1.5 12.375C1.5 18.4501 6.42487 23.375 12.5 23.375Z" fill="white"/>
+<path d="M12.5 25C5.625 25 0 19.375 0 12.5C0 5.625 5.625 0 12.5 0C19.375 0 25 5.625 25 12.5C25 19.375 19.375 25 12.5 25ZM16.75 7.375C16.25 7.375 15.875 7.75 15.875 8.25C15.875 8.75 16.25 9.125 16.75 9.125C17.25 9.125 17.625 8.75 17.625 8.25C17.625 7.75 17.25 7.375 16.75 7.375ZM12.625 8.625C10.5 8.625 8.75 10.375 8.75 12.5C8.75 14.625 10.5 16.375 12.625 16.375C14.75 16.375 16.5 14.625 16.5 12.5C16.5 10.375 14.75 8.625 12.625 8.625ZM12.625 15C11.25 15 10.125 13.875 10.125 12.5C10.125 11.125 11.25 10 12.625 10C14 10 15.125 11.125 15.125 12.5C15.125 13.875 14 15 12.625 15ZM20.5 9.25C20.5 6.625 18.375 4.5 15.75 4.5H9.5C6.875 4.5 4.75 6.625 4.75 9.25V15.5C4.75 18.125 6.875 20.25 9.5 20.25H15.75C18.375 20.25 20.5 18.125 20.5 15.5V9.25ZM19 15.5C19 17.25 17.5 18.75 15.75 18.75H9.5C7.625 18.75 6.25 17.375 6.25 15.5V9.25C6.25 7.5 7.625 6 9.5 6H15.75C17.5 6 19 7.5 19 9.25V15.5Z" fill="url(#paint0_linear_148_5313)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_148_5313" x1="2.4" y1="21.1" x2="33.4122" y2="-5.3065" gradientUnits="userSpaceOnUse">
+<stop offset="0.0011048" stop-color="#FFE185"/>
+<stop offset="0.2094" stop-color="#FFBB36"/>
+<stop offset="0.3765" stop-color="#FF5176"/>
+<stop offset="0.5238" stop-color="#F63395"/>
+<stop offset="0.7394" stop-color="#A436D2"/>
+<stop offset="1" stop-color="#5F4EED"/>
+</linearGradient>
+<clipPath id="clip0_148_5313">
+<rect width="25" height="25" fill="white"/>
+</clipPath>
+</defs>
+</svg><span>mbm_khm</span></a></p>
+            </div>
+            <div class="contact page-contact">
+              <h2>Наші контакти</h2>
+              <p class="flex item-center"><a class="flex item-center" href="tel:+3800676881050">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+<path d="M11.5 10.6012C9.50415 12.7018 4.41318 7.65653 6.41662 5.54795C7.63985 4.26052 6.25803 2.78923 5.49317 1.70778C4.0577 -0.321854 0.906427 2.48034 1.00213 4.26287C1.30394 9.88404 7.38462 16.5455 13.2729 15.9645C15.115 15.7827 17.2315 12.456 15.1186 11.2402C14.0621 10.6322 12.6118 9.43099 11.5 10.6012Z" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><span>067 688 10 50</span></a></p>
+              <p><a class="flex item-center" href="mailto:tanamakcik74@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14" fill="none">
+<path d="M16.363 3.28125L12.6117 7.20905C11.1839 8.54826 10.47 9.21787 9.62562 9.21787C8.78124 9.21787 8.06733 8.54826 6.63953 7.20905L2.88818 3.28125" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="0.5" y="0.5" width="18.25" height="13" rx="1.5" stroke="#121212"/>
+</svg><span>tanamakcik74@gmail.com</span></a></p>
+            </div>
+          </div>
+          <div class="form-contactPage"> 
+            <form action="senddata.php" method="post"> 
+              <h2>зворотній звʼязок:</h2>
+              <p>Залишіть свої дані для звʼязку з нами.</p>
+              <p> 
+                <label for="name">Імʼя*</label>
+                <input id="name" type="text" name="userName" minlength="3" maxlength="30" required="" oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯїЇєЄіІґҐs]/g, '')"><span class="error-name"></span>
+              </p>
+              <p> 
+                <label for="userPhone">Телефон*</label>
+                <input class="phoneInput inputMask" type="tel" name="userPhone" required="" maxlength="13"><span class="error-tel"></span>
+              </p>
+              <p>
+                <label for="textarea">Повідомлення*</label>
+                <textarea id="textarea" name="textarea"></textarea>
+                <input type="hidden" id="orderWebsiteURL1" name="orderWebsiteURL">
+              </p>
+              <div class="wrapper tac_form_btn"> 
+                <button class="submit-btn" type="submit">відправити</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="black_bg"> 
+      <div class="wrapper grid footer">
+        <nav class="nav_footer">
+          <h3>клієнтам</h3>
+          <ul class="menu menu_footer">
+            <li> <a href="#spivpracia_container" data-target="spivpracia">співпраця</a></li>
+            <li> <a href="#delivery_container" data-target="delivery">оплата та доставка</a></li>
+            <li> <a href="#obmin_container" data-target="obmin">повернення та обмін</a></li>
+            <li> <a href="#contacts">контакти</a></li>
+          </ul>
+        </nav>
+        <div class="logo"> <a class="flex items-center" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="110" height="110" viewBox="0 0 110 110" fill="none">
+<path d="M109.5 55C109.5 85.0995 85.0995 109.5 55 109.5C24.9005 109.5 0.5 85.0995 0.5 55C0.5 24.9005 24.9005 0.5 55 0.5C85.0995 0.5 109.5 24.9005 109.5 55Z" fill="#121212" stroke="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M32.1677 46.9267C32.1677 47.3052 36.7089 51.5942 36.9612 51.8465C37.7181 52.6034 41.5025 56.3878 41.881 56.7662L46.6745 51.9726V57.9015C46.6745 58.4061 47.053 58.5323 47.5576 59.0368L51.5943 62.9474V62.1905H56.7663C58.0278 62.1905 58.0278 63.0735 58.0278 63.9566C58.0278 64.7134 57.6493 65.218 56.7663 65.218H51.5943C51.5943 64.5873 51.2158 64.4612 50.4589 63.8305C49.7021 63.0736 47.053 60.4245 46.6745 60.046V69.3809H58.9108C60.1722 69.3809 61.8122 68.3717 62.4429 67.6149C63.9567 65.5965 64.0828 62.6951 62.8213 60.5506C62.569 60.1722 62.4429 60.046 62.1906 59.7937C62.6952 59.0369 63.1998 59.0368 63.5782 57.1446C63.9566 54.874 63.4521 52.7295 61.5599 51.3419C60.9291 50.8373 59.6677 50.2066 58.5323 50.2066H51.5943V41.124C50.0805 41.124 50.5851 41.124 48.4406 43.2685C47.6837 44.0254 47.053 44.7823 46.2961 45.5392L42.0071 49.9543C41.5025 49.702 36.2044 44.2777 35.3213 43.3947C34.9429 43.0162 34.5644 42.6378 34.186 42.2593C33.0507 41.124 33.5553 41.2501 32.0415 41.2501V46.9267H32.1677ZM51.5943 55.8832V54.4956H57.2709C58.4062 54.4956 58.5323 57.1446 56.8924 57.1446H53.2342C52.0989 57.1446 51.5943 56.8924 51.5943 55.8832Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M58.658 46.9268C58.658 47.3052 63.1992 51.5943 63.4515 51.8466C64.2084 52.6034 67.9928 56.3878 68.3713 56.7663L73.1648 51.9727V59.2892C73.1648 59.6677 73.0387 60.0461 73.4171 60.0461H77.9584V40.8718C76.5708 40.8718 76.8231 40.6195 75.3093 42.3856C75.057 42.6378 75.057 42.764 74.8047 43.0163L71.6511 46.17C71.2726 46.5484 71.0203 46.9268 70.6419 47.3053C70.1373 47.8099 69.002 49.0713 68.4974 49.4497L64.0823 45.0346C63.4515 44.53 62.5685 43.5209 61.9378 42.8901C61.5593 42.5117 61.1809 42.1333 60.8025 41.7548C59.6671 40.6195 60.1717 40.7456 58.658 40.7456V46.9268Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M32.1672 60.1721H37.087V53.9909C37.087 53.6125 32.4195 49.0712 32.1672 48.9451V60.1721Z" fill="white"/>
+</svg><span>Власне<span>виробництво одягу</span></span></a></div>
+        <div class="contact_footer">
+          <h3>Контакти</h3>
+          <p><a class="flex items-center" href="tel:+3800676881050">
+               <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+<path d="M11.5 10.6012C9.50415 12.7018 4.41318 7.65653 6.41662 5.54795C7.63985 4.26052 6.25803 2.78923 5.49317 1.70778C4.0577 -0.321854 0.906427 2.48034 1.00213 4.26287C1.30394 9.88404 7.38462 16.5455 13.2729 15.9645C15.115 15.7827 17.2315 12.456 15.1186 11.2402C14.0621 10.6322 12.6118 9.43099 11.5 10.6012Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><span>067 688 10 50</span></a></p>
+          <p><a class="flex items-center" href="mailto:tanamakcik74@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14" fill="none">
+<path d="M16.363 2.28101L12.6117 6.2088C11.1839 7.54802 10.47 8.21763 9.62562 8.21763C8.78124 8.21763 8.06733 7.54802 6.63953 6.20881L2.88818 2.28101" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="0.75" y="0.75" width="17.75" height="12.5" rx="1.25" stroke="white" stroke-width="1.5"/>
+</svg><span>tanamakcik74@gmail.com</span></a></p>
+        </div>
+        <div class="social_footer"> 
+          <h3>ми у соцмережах</h3>
+          <div class="flex items-center"> <a class="d-flex items-center tktk" href="https://www.tiktok.com/@streetwear_mbm" target="blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+<g clip-path="url(#clip0_148_5295)">
+<path d="M24.5 12.5C24.5 19.1274 19.1274 24.5 12.5 24.5C5.87258 24.5 0.5 19.1274 0.5 12.5C0.5 5.87258 5.87258 0.5 12.5 0.5C19.1274 0.5 24.5 5.87258 24.5 12.5Z" fill="#121212" stroke="black"/>
+<path d="M9.125 17.5C9.25 17.625 9.375 17.75 9.5 17.875C9.875 18.25 10.375 18.375 10.875 18.375C12.125 18.5 13.25 17.5 13.375 16.25V16.125C13.375 12.375 13.375 8.625 13.375 4.875C13.375 4.625 13.375 4.625 13.625 4.625C14.25 4.625 14.75 4.625 15.375 4.625H15.5V4.75C15.75 5.75 16.25 6.5 17.125 7.125L17.25 7.25C17.25 7.25 17.375 7.25 17.375 7.375C17.5 7.5 17.625 7.625 17.75 7.625C18.25 8 18.75 8.25 19.25 8.375H19.375V8.5C19.375 9.125 19.375 9.875 19.375 10.5C19.375 10.625 19.375 10.625 19.25 10.625C18.75 10.625 18.25 10.5 17.875 10.5C17.125 10.375 16.375 10 15.625 9.5C15.625 9.5 15.5 9.375 15.5 9.5V9.625C15.5 11.5 15.5 13.375 15.5 15.25C15.5 16.5 15.125 17.75 14.25 18.75C13.375 19.75 12.25 20.375 10.875 20.625C9.875 20.75 8.75 20.625 7.875 20.125C7.75 20 7.625 20 7.375 19.875L7.25 19.75C6.875 19.5 6.75 19.125 6.5 18.75C6.125 18.25 6 17.625 5.875 17C5.875 16.625 5.75 16.25 5.75 15.875C5.875 14.625 6.25 13.625 7 12.75C7.625 12 8.5 11.5 9.375 11.125C9.75 11 10.125 10.875 10.625 10.875C10.75 10.875 10.75 10.875 10.875 10.875H11V11C11 11.625 11 12.375 11 13C11 13 11 13 11 13.125C11 13.25 11 13.25 10.875 13.25C10.75 13.25 10.5 13.125 10.375 13.125C10.125 13.125 9.75 13.125 9.5 13.25C8.625 13.625 8 14.25 7.875 15.25C7.75 16.25 8.125 17 8.875 17.5C9 17.375 9.125 17.5 9.125 17.5Z" fill="white"/>
+<path d="M7.375 19.875C8 20.25 8.75 20.5 9.375 20.625C9.75 20.625 10.125 20.75 10.375 20.625C11.5 20.625 12.625 20.125 13.5 19.375C14.375 18.625 15 17.75 15.25 16.625C15.375 16.25 15.375 15.875 15.375 15.625C15.375 15.375 15.375 15.25 15.375 15C15.375 13.25 15.375 11.5 15.375 9.75V9.625H15.5C16.125 10 16.75 10.375 17.5 10.625C17.875 10.75 18.375 10.75 18.75 10.875C18.875 10.875 19.125 10.875 19.25 10.875C19.375 10.875 19.375 10.875 19.375 10.75C19.375 10.625 19.375 10.625 19.375 10.5C19.375 9.875 19.375 9.25 19.375 8.75V8.625C19.5 8.625 19.75 8.625 19.875 8.75C20 8.75 20.125 8.75 20.125 8.75C20.125 8.75 20.25 8.75 20.25 8.875C20.25 9.75 20.25 10.625 20.25 11.5C20.25 11.625 20.25 11.625 20.125 11.625C19.875 11.625 19.625 11.625 19.375 11.625C18.875 11.5 18.25 11.375 17.75 11.25C17.25 11 16.75 10.75 16.375 10.5C16.375 10.5 16.375 10.5 16.25 10.375V10.5C16.25 12.375 16.25 14.25 16.25 16.125C16.25 17.125 16 18.125 15.5 18.875C14.875 19.875 14 20.625 12.75 21C12 21.25 11.375 21.375 10.625 21.25C9.5 21.25 8.375 20.75 7.375 19.875Z" fill="#E31F25"/>
+<path d="M15.625 4.75C15.5 4.75 15.5 4.75 15.625 4.75C14.875 4.75 14.25 4.75 13.625 4.75C13.5 4.75 13.5 4.75 13.5 4.875C13.5 8.625 13.5 12.375 13.5 16C13.5 16.25 13.5 16.5 13.375 16.75C13.125 17.625 12.5 18.25 11.625 18.375C10.625 18.625 9.875 18.25 9.25 17.5C9.375 17.625 9.625 17.625 9.875 17.625C10.5 17.75 11.125 17.625 11.625 17.375C12.25 17 12.625 16.375 12.75 15.75C12.75 15.625 12.75 15.5 12.75 15.375C12.75 11.625 12.75 7.875 12.75 4.25C12.75 4.125 12.75 4.125 12.875 4.125C13.75 4.125 14.625 4.125 15.5 4.125C15.625 4.125 15.625 4.125 15.625 4.25C15.5 4.25 15.5 4.5 15.625 4.75Z" fill="#0CBAC6"/>
+<path d="M11 10.875C10.5 10.875 10 10.875 9.5 11.125C8.75 11.375 8.125 11.75 7.5 12.25C6.75 12.875 6.25 13.75 6 14.75C5.875 15.125 5.875 15.5 5.875 15.75C5.875 16 5.875 16.125 5.875 16.375C5.875 17 6 17.5 6.25 18.125C6.5 18.75 6.875 19.25 7.25 19.75C7.125 19.75 7.125 19.625 7 19.5C6.125 18.875 5.5 18 5.25 16.875C5.125 16.625 5 16.25 5 15.875C5 15.625 5 15.375 5 15C5 14.375 5.25 13.75 5.5 13.25C5.75 12.625 6.125 12.125 6.625 11.625C7.125 11.125 7.75 10.625 8.5 10.375C9 10.25 9.375 10.125 9.875 10.125C10.25 10.125 10.625 10.125 10.875 10.125C10.875 10.125 11 10.125 11 10.25C11 10.375 11 10.625 11 10.875Z" fill="#0CBAC6"/>
+<path d="M9.12502 17.5C8.87502 17.375 8.75002 17.25 8.62502 17.125C8.25002 16.75 8.00002 16.25 7.87502 15.625C7.75002 14.375 8.50002 13.375 9.50002 13C10 12.875 10.375 12.875 10.875 13C10.875 13 10.875 13 11 13V12.875C11 12.25 11 11.5 11 10.875V10.75C11.25 10.75 11.5 10.75 11.75 10.75C11.75 11.625 11.75 12.5 11.75 13.5V13.625C11.625 13.625 11.5 13.625 11.375 13.5C10.625 13.375 10 13.625 9.50002 14C9.00002 14.375 8.75002 14.875 8.62502 15.5C8.62502 16.375 8.75002 16.875 9.12502 17.5Z" fill="#E31F25"/>
+<path d="M17.375 7.375C17.125 7.25 16.875 7 16.625 6.75C16 6.125 15.75 5.5 15.5 4.75C15.75 4.75 16 4.75 16.25 4.75C16.25 5.375 16.5 6 16.75 6.625C17 6.875 17.125 7.125 17.375 7.375Z" fill="#E31F25"/>
+<path d="M19.5 8.625C18.75 8.5 18.25 8.125 17.625 7.75C17.625 7.625 17.5 7.5 17.5 7.5C17.5 7.5 17.5 7.5 17.625 7.5C18 7.75 18.5 7.875 19 8C19.125 8 19.375 8 19.625 8C19.75 8 19.75 8 19.75 8.125C19.5 8.25 19.5 8.375 19.5 8.625Z" fill="#0CBAC6"/>
+</g>
+<defs>
+<clipPath id="clip0_148_5295">
+<rect width="25" height="25" fill="white"/>
+</clipPath>
+</defs>
+</svg></a><a class="d-flex items-center fb" href="https://www.facebook.com/mbm.khm" target="blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+<g clip-path="url(#clip0_148_5309)">
+<path d="M12.5 0C5.625 0 0 5.625 0 12.5C0 18.75 4.625 23.875 10.5 24.875V16.125H7.375V12.5H10.5V9.75C10.5 6.625 12.375 4.875 15.25 4.875C16.625 4.875 18 5.125 18 5.125V8.25H16.375C14.875 8.25 14.375 9.25 14.375 10.25V12.5H17.875L17.375 16.125H14.5V24.875C20.375 23.875 25 18.75 25 12.5C25 5.625 19.375 0 12.5 0Z" fill="#1677F0"/>
+</g>
+<defs>
+<clipPath id="clip0_148_5309">
+<rect width="25" height="25" fill="white"/>
+</clipPath>
+</defs>
+</svg></a><a class="d-flex items-center inst" href="https://www.instagram.com/mbm_khm/" target="blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+<g clip-path="url(#clip0_148_5313)">
+<path d="M12.5 23.375C18.5751 23.375 23.5 18.4501 23.5 12.375C23.5 6.29987 18.5751 1.375 12.5 1.375C6.42487 1.375 1.5 6.29987 1.5 12.375C1.5 18.4501 6.42487 23.375 12.5 23.375Z" fill="white"/>
+<path d="M12.5 25C5.625 25 0 19.375 0 12.5C0 5.625 5.625 0 12.5 0C19.375 0 25 5.625 25 12.5C25 19.375 19.375 25 12.5 25ZM16.75 7.375C16.25 7.375 15.875 7.75 15.875 8.25C15.875 8.75 16.25 9.125 16.75 9.125C17.25 9.125 17.625 8.75 17.625 8.25C17.625 7.75 17.25 7.375 16.75 7.375ZM12.625 8.625C10.5 8.625 8.75 10.375 8.75 12.5C8.75 14.625 10.5 16.375 12.625 16.375C14.75 16.375 16.5 14.625 16.5 12.5C16.5 10.375 14.75 8.625 12.625 8.625ZM12.625 15C11.25 15 10.125 13.875 10.125 12.5C10.125 11.125 11.25 10 12.625 10C14 10 15.125 11.125 15.125 12.5C15.125 13.875 14 15 12.625 15ZM20.5 9.25C20.5 6.625 18.375 4.5 15.75 4.5H9.5C6.875 4.5 4.75 6.625 4.75 9.25V15.5C4.75 18.125 6.875 20.25 9.5 20.25H15.75C18.375 20.25 20.5 18.125 20.5 15.5V9.25ZM19 15.5C19 17.25 17.5 18.75 15.75 18.75H9.5C7.625 18.75 6.25 17.375 6.25 15.5V9.25C6.25 7.5 7.625 6 9.5 6H15.75C17.5 6 19 7.5 19 9.25V15.5Z" fill="url(#paint0_linear_148_5313)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_148_5313" x1="2.4" y1="21.1" x2="33.4122" y2="-5.3065" gradientUnits="userSpaceOnUse">
+<stop offset="0.0011048" stop-color="#FFE185"/>
+<stop offset="0.2094" stop-color="#FFBB36"/>
+<stop offset="0.3765" stop-color="#FF5176"/>
+<stop offset="0.5238" stop-color="#F63395"/>
+<stop offset="0.7394" stop-color="#A436D2"/>
+<stop offset="1" stop-color="#5F4EED"/>
+</linearGradient>
+<clipPath id="clip0_148_5313">
+<rect width="25" height="25" fill="white"/>
+</clipPath>
+</defs>
+</svg></a></div><a class="privacyPolice" href="privacy.html">Політика Конфіденційності</a>
+          <p>&copy copyright by MBM 2025 </p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/scripts.js"> </script>
+  </body>
+</html>
