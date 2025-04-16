@@ -34,10 +34,16 @@ h2
     font-size: 30rem
     font-weight: 700
     text-transform: uppercase
+input
+    &::-webkit-calendar-picker-indicator 
+        opacity: 0
+        -webkit-appearance: none
+        appearance: none
 
 input,
 textarea,
-select
+select, 
+datalist
     appearance: none
     width: 100%
     outline: none
@@ -50,7 +56,8 @@ textarea
 input[type='text'],
 input[type='tel'],
 textarea,
-select
+select,
+datalist
     padding: 12rem 10rem
     border-radius: 3px
     border: 1px solid $black
@@ -632,13 +639,13 @@ button.spivpracia_product_btn,
         line-height: 1.8em
         span
             display: block
-    input, select
+    input, select, datalist
         border-color: #CABABA
     .grid
         margin-bottom: 10rem
         +media(768)
             grid-template-columns: repeat(2, 1fr)
-    select
+    select, datalist
         background-color: transparent
         option
             &:disabled
@@ -670,6 +677,13 @@ button.spivpracia_product_btn,
         border-right: 1.5px solid $black
         transform: translateY(40%) rotate(135deg)
         z-index: -1
+        transition: all .5s ease
+    &:hover
+        &::before
+            transform: translateY(70%) rotate(-45deg)
+        
+    input
+        background-color: transparent
 .pay_method 
     label
         display: flex

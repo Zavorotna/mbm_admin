@@ -120,19 +120,22 @@
               </label>
             </div>
             <label class="arrow_select"><span>Регіон/область*</span>
-              <select class="region" name="region" required>
-                <option value="0" selected disabled>Обрати </option>
-                <option value="1">Хмельницький  </option>
-              </select>
+              <input type="text" name="region" list="regions" required>
+              <datalist id="regions">
+                <option value="Хмельницький"></option>
+              </datalist>
             </label>
             <label class="arrow_select"> <span>Населений пункт*</span>
-              <select class="region" name="region" required>
-                <option value="0" selected disabled>Обрати </option>
-                <option value="1">Хмельницький  </option>
-              </select>
+              <input type="text" name="city" list="cities" required>
+              <datalist id="cities">
+                <option value="Хмельницький"></option>
+              </datalist>
             </label>
-            <label>Відділення пошти*
-              <input type="text" required>
+            <label class="arrow_select"> <span>Відділення пошти*</span>
+              <input type="text" name="city" list="cities" required>
+              <datalist id="cities">
+                <option value="Хмельницький"></option>
+              </datalist>
             </label>
           </div>
           <div class="pay_method"> 

@@ -56,16 +56,19 @@ html(lang="en")
                                 input(type="radio", name="post").np
                         label.arrow_select
                             span Регіон/область*
-                            select.region(name="region" required)
-                                option(value="0" selected disabled) Обрати 
-                                option(value="1") Хмельницький  
+                            input(type="text" name="region" list="regions" required)
+                            datalist#regions
+                                option(value="Хмельницький")
                         label.arrow_select 
                             span Населений пункт*
-                            select.region(name="region" required)
-                                option(value="0" selected disabled) Обрати 
-                                option(value="1") Хмельницький  
-                        label Відділення пошти*
-                            input(type="text" required)
+                            input(type="text" name="city" list="cities" required)
+                            datalist#cities
+                                option(value="Хмельницький")
+                        label.arrow_select 
+                            span Відділення пошти*
+                            input(type="text" name="city" list="cities" required)
+                            datalist#cities
+                                option(value="Хмельницький")
                     .pay_method 
                         h2 Оберіть спосіб оплати: 
                         label.items-center
