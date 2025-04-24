@@ -63,10 +63,10 @@
 <path d="M1 15L14.7071 1M15 15L1.29291 1" stroke="#121212" stroke-width="1.5" stroke-linecap="round"/>
 </svg></a></li>
             <li> <a href="catalog.html">каталог</a></li>
-            <li> <a href="#spivpracia_container" data-target="spivpracia">співпраця</a></li>
-            <li> <a href="#delivery_container" data-target="delivery">оплата та доставка</a></li>
-            <li> <a href="#obmin_container" data-target="obmin">повернення та обмін</a></li>
-            <li> <a href="#contacts">контакти</a></li>
+            <li> <a href="index.html#spivpracia_container" data-target="spivpracia">співпраця</a></li>
+            <li> <a href="index.html#delivery_container" data-target="delivery">оплата та доставка</a></li>
+            <li> <a href="index.html#obmin_container" data-target="obmin">повернення та обмін</a></li>
+            <li> <a href="index.html#contacts">контакти</a></li>
             <li class="mobile_contacts"> <a class="items-center" href="tel:+3800676881050">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
 <path d="M12 11.1012C10.0042 13.2018 4.91318 8.15653 6.91662 6.04795C8.13985 4.76052 6.75803 3.28923 5.99317 2.20778C4.5577 0.178146 1.40643 2.98034 1.50213 4.76287C1.80394 10.384 7.88462 17.0455 13.7729 16.4645C15.615 16.2827 17.7315 12.956 15.6186 11.7402C14.5621 11.1322 13.1118 9.93099 12 11.1012Z" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

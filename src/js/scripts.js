@@ -344,6 +344,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     hideAllSections()
     deactivateAllButtons()
+    function openSectionFromHash() {
+        const hash = window.location.hash.substring(1) 
+        if (!hash) return
+
+        const sectionToShow = document.getElementById(hash)
+        if (sectionToShow) {
+            hideAllSections()
+            deactivateAllButtons()
+            console.log(sectionToShow);
+            sectionToShow.querySelector('.description-more').classList.add('visible')
+            if (sectionToShow.querySelector(".readmore")) {
+                sectionToShow.querySelector(".readmore").classList.add('readmore-active')
+            }
+
+            activeSection = sectionToShow
+
+            setTimeout(() => {
+                sectionToShow.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }, 100) 
+        }
+    }
+
+    openSectionFromHash()
 
     //spivpracia popup
     const spivpraciaBtn = document.querySelectorAll(".spivpracia_btn"),
